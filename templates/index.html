@@ -1,177 +1,258 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Harkish-Verse</title>
-</head>
-<body>
-    <h1>Welcome to Harkish-Verse</h1>
-    <p>Website is working!</p>
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harkish-Verse</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
+<title>Harkish-Verse | Backend Developer</title>
 
-        body {
-            background: #050505;
-            color: white;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(5,5,5,.95);
-            padding: 18px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
+body{
+    background:#050505;
+    color:#fff;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #00eaff;
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.96);
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #242424;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ff1e1e;
+}
 
-        nav a:hover {
-            color: #00eaff;
-        }
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
 
-        section {
-            padding: 80px 8%;
-            min-height: 70vh;
-        }
+nav a:hover{
+    color:#ff1e1e;
+}
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #102a35, #050505 60%);
-        }
+section{
+    padding:80px 8%;
+}
 
-        .hero h1 {
-            font-size: clamp(45px, 9vw, 90px);
-            color: #00eaff;
-            text-shadow: 0 0 25px #00eaff;
-        }
+.hero{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:radial-gradient(circle at center,#260707,#050505 62%);
+}
 
-        .hero p {
-            margin: 20px 0;
-            color: #bbb;
-            font-size: 18px;
-        }
+.hero h1{
+    font-size:clamp(45px,9vw,90px);
+    color:#ff1e1e;
+    text-shadow:0 0 25px rgba(255,30,30,.55);
+}
 
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            margin: 8px;
-            border-radius: 30px;
-            background: #00eaff;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.hero p{
+    margin:20px 0;
+    color:#aaa;
+    font-size:18px;
+}
 
-        .btn.dark {
-            background: transparent;
-            color: white;
-            border: 1px solid #00eaff;
-        }
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    margin:8px;
+    border-radius:8px;
+    background:#ff1e1e;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid #ff1e1e;
+    cursor:pointer;
+}
 
-        h2 {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 40px;
-            color: #00eaff;
-        }
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+.btn.dark{
+    background:transparent;
+    color:#fff;
+    border:1px solid #555;
+}
 
-        .card {
-            background: #101010;
-            border: 1px solid #222;
-            padding: 25px;
-            border-radius: 18px;
-            transition: .3s;
-        }
+.btn.dark:hover{
+    border-color:#ff1e1e;
+    color:#ff1e1e;
+    background:transparent;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: #00eaff;
-            box-shadow: 0 0 20px rgba(0,234,255,.2);
-        }
+h2{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+    color:#ff1e1e;
+}
 
-        form {
-            max-width: 500px;
-            margin: auto;
-        }
+.subtitle{
+    text-align:center;
+    color:#888;
+    margin-top:-25px;
+    margin-bottom:35px;
+}
 
-        input, textarea {
-            width: 100%;
-            margin: 8px 0;
-            padding: 14px;
-            background: #111;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 10px;
-        }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        textarea {
-            height: 130px;
-            resize: vertical;
-        }
+.card{
+    background:#0d0d0d;
+    border:1px solid #242424;
+    padding:25px;
+    border-radius:12px;
+    transition:.3s;
+}
 
-        button {
-            border: none;
-            cursor: pointer;
-        }
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#ff1e1e;
+    box-shadow:0 0 20px rgba(255,30,30,.12);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #222;
-            color: #888;
-        }
+.card h3{
+    margin-bottom:12px;
+}
 
-        @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
+.card p{
+    color:#999;
+    line-height:1.6;
+}
 
-            nav a {
-                margin: 5px;
-                font-size: 14px;
-            }
-        }
-    </style>
+form{
+    max-width:600px;
+    margin:auto;
+    background:#0d0d0d;
+    border:1px solid #242424;
+    padding:25px;
+    border-radius:12px;
+}
+
+input,textarea,select{
+    width:100%;
+    margin:8px 0;
+    padding:14px;
+    background:#111;
+    border:1px solid #333;
+    color:#fff;
+    border-radius:8px;
+    outline:none;
+}
+
+input:focus,textarea:focus,select:focus{
+    border-color:#ff1e1e;
+}
+
+textarea{
+    height:130px;
+    resize:vertical;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    max-width:850px;
+    margin:0 auto 35px;
+}
+
+.contact-item{
+    background:#0d0d0d;
+    border:1px solid #242424;
+    padding:22px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.contact-item strong{
+    display:block;
+    margin-bottom:8px;
+    color:#ff1e1e;
+}
+
+.contact-item a{
+    color:#fff;
+    text-decoration:none;
+    word-break:break-word;
+}
+
+.contact-item a:hover{
+    color:#ff1e1e;
+}
+
+.hire{
+    background:linear-gradient(135deg,#150505,#090909);
+}
+
+.hire-badge{
+    text-align:center;
+    color:#ff1e1e;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #242424;
+    color:#666;
+}
+
+footer span{
+    color:#ff1e1e;
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    nav a{
+        margin:5px;
+        font-size:13px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -182,125 +263,228 @@
     <div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#gaming">Gaming</a>
-        <a href="#login">Login</a>
-        <a href="#payment">Payment</a>
+        <a href="#services">Services</a>
+        <a href="#hire">Hire Me</a>
         <a href="#contact">Contact</a>
+        <a href="/login">Login</a>
     </div>
 </nav>
 
+
 <section class="hero" id="home">
+
     <h1>HARKISH-VERSE</h1>
-    <p>Welcome to the next generation digital universe.</p>
+
+    <p>
+        Backend Developer · APIs · Python · Flask · FastAPI
+    </p>
 
     <div>
-        <a class="btn" href="#gaming">Explore Gaming</a>
-        <a class="btn dark" href="#about">Discover More</a>
+        <a class="btn" href="#hire">Hire Me</a>
+        <a class="btn dark" href="#services">View Services</a>
     </div>
+
 </section>
+
 
 <section id="about">
-    <h2>About Harkish-Verse</h2>
+
+    <h2>About Me</h2>
 
     <div class="cards">
+
         <div class="card">
-            <h3>🚀 Our Vision</h3>
-            <p>Harkish-Verse is a modern digital space built for gaming, community and creativity.</p>
+            <h3>Backend Development</h3>
+            <p>
+                Building Python-based backend systems, APIs,
+                authentication and database-driven applications.
+            </p>
         </div>
 
         <div class="card">
-            <h3>✨ Modern Design</h3>
-            <p>A clean, futuristic interface designed for both mobile and desktop users.</p>
+            <h3>API Development</h3>
+            <p>
+                REST API development with Flask and FastAPI,
+                designed for modern web applications.
+            </p>
         </div>
 
         <div class="card">
-            <h3>🌐 Community</h3>
-            <p>Connect, explore and build your own experience inside Harkish-Verse.</p>
+            <h3>Deployment</h3>
+            <p>
+                Working with GitHub, Docker, Linux and
+                cloud deployment workflows.
+            </p>
         </div>
+
     </div>
+
 </section>
 
-<section id="gaming">
-    <h2>🎮 Gaming Zone</h2>
+
+<section id="services">
+
+    <h2>Developer Services</h2>
 
     <div class="cards">
+
         <div class="card">
-            <h3>🔥 Free Fire</h3>
-            <p>Gaming content, profiles, updates and community features.</p>
-            <a class="btn" href="#">Explore</a>
+            <h3>🐍 Python Backend</h3>
+            <p>
+                Python backend applications and server-side logic.
+            </p>
         </div>
 
         <div class="card">
-            <h3>🏆 Tournaments</h3>
-            <p>Future tournament and gaming-event features can be added here.</p>
+            <h3>⚡ REST APIs</h3>
+            <p>
+                API endpoints, request handling and backend integration.
+            </p>
         </div>
 
         <div class="card">
-            <h3>👑 Gamer Profiles</h3>
-            <p>Create your gaming identity and showcase your profile.</p>
+            <h3>🗄️ Database</h3>
+            <p>
+                SQLite and database-backed application systems.
+            </p>
         </div>
+
+        <div class="card">
+            <h3>🚀 Deployment</h3>
+            <p>
+                GitHub, Docker, Linux and cloud deployment setup.
+            </p>
+        </div>
+
     </div>
+
 </section>
 
-<section id="login">
-    <h2>🔐 Login / Signup</h2>
 
-    <form onsubmit="demoLogin(event)">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+<section class="hire" id="hire">
 
-        <button class="btn" type="submit">Login</button>
-        <button class="btn dark" type="button" onclick="alert('Signup system will be connected to the backend later.')">
-            Signup
+    <div class="hire-badge">AVAILABLE FOR PROJECTS</div>
+
+    <h2>Hire Me</h2>
+
+    <p class="subtitle">
+        Tell me about your project and send a hiring request.
+    </p>
+
+    <form onsubmit="sendHireRequest(event)">
+
+        <input
+            type="text"
+            id="hireName"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="hireEmail"
+            placeholder="Your Email"
+            required
+        >
+
+        <select id="hireService" required>
+            <option value="">Select Service</option>
+            <option>Python Backend</option>
+            <option>REST API Development</option>
+            <option>Flask / FastAPI</option>
+            <option>Database Development</option>
+            <option>Deployment / Docker</option>
+            <option>Other Project</option>
+        </select>
+
+        <textarea
+            id="hireMessage"
+            placeholder="Tell me about your project..."
+            required
+        ></textarea>
+
+        <button class="btn" type="submit">
+            Send Hire Request
         </button>
+
     </form>
+
 </section>
 
-<section id="payment">
-    <h2>💳 Payment</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Secure Payments</h3>
-            <p>Payment gateway integration can be connected here.</p>
-            <button class="btn" onclick="alert('Payment gateway is not connected yet.')">
-                Pay Now
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>Payment Status</h3>
-            <p>Your real payment status will appear here after backend integration.</p>
-        </div>
-    </div>
-</section>
 
 <section id="contact">
-    <h2>📞 Contact Us</h2>
 
-    <form onsubmit="contactForm(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+    <h2>Contact</h2>
 
-        <button class="btn" type="submit">Send Message</button>
-    </form>
+    <div class="contact-box">
+
+        <div class="contact-item">
+            <strong>EMAIL</strong>
+            <a href="mailto:harkishdheer1@gmail.com">
+                harkishdheer1@gmail.com
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <strong>PHONE</strong>
+            <a href="tel:+351920631341">
+                +351 920 631 341
+            </a>
+        </div>
+
+    </div>
+
 </section>
 
+
 <footer>
-    © 2026 Harkish-Verse — All Rights Reserved.
+    © 2026 <span>Harkish-Verse</span> — Backend Developer
 </footer>
 
-<script>
-    function demoLogin(event) {
-        event.preventDefault();
-        alert("Demo login working! Real authentication will be connected later.");
-    }
 
-    function contactForm(event) {
-        event.preventDefault();
-        alert("Message form is working! Email/backend connection will be added later.");
-    }
+<script>
+
+function sendHireRequest(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("hireName").value.trim();
+
+    const email =
+        document.getElementById("hireEmail").value.trim();
+
+    const service =
+        document.getElementById("hireService").value;
+
+    const message =
+        document.getElementById("hireMessage").value.trim();
+
+    const subject =
+        encodeURIComponent(
+            "Hire Request - Harkish-Verse"
+        );
+
+    const body =
+        encodeURIComponent(
+`Hello Harkish,
+
+I would like to hire you for a project.
+
+Name: ${name}
+Email: ${email}
+Service: ${service}
+
+Project Details:
+${message}
+
+Thank you.`
+        );
+
+    window.location.href =
+        `mailto:harkishdheer1@gmail.com?subject=${subject}&body=${body}`;
+}
+
 </script>
 
 </body>
