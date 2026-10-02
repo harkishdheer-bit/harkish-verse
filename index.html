@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Harkish Verse — Python backend developer portfolio.">
+  <title>Harkish Verse | Python Backend Developer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="web-bg"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home">HARKISH <span>VERSE</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Hire Me</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PYTHON • DATABASE • BACKEND</p>
+        <h1>BUILDING THE<br><span>BACKEND</span><br>BEHIND THE WEB.</h1>
+        <p class="lead">
+          I'm Harkish — a developer focused on Python backend systems,
+          databases and practical web applications.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#contact">HIRE ME</a>
+          <a class="btn" href="#projects">VIEW WORK</a>
+        </div>
+      </div>
+
+      <div class="spider-mark" aria-label="Spider-Man inspired graphic">
+        <div class="spider"></div>
+        <div class="orbit orbit1"></div>
+        <div class="orbit orbit2"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <p class="eyebrow">01 / ABOUT</p>
+      <h2>THE DEVELOPER<br><span>BEHIND THE CODE</span></h2>
+      <p class="section-text">
+        Harkish Verse is a developer portfolio built around clean backend
+        architecture, Python development and database-driven applications.
+        The goal: reliable systems that are simple to use and easy to grow.
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <p class="eyebrow">02 / STACK</p>
+      <h2>MY <span>TOOLKIT</span></h2>
+      <div class="cards">
+        <article><b>PYTHON</b><p>Backend logic, APIs and automation.</p></article>
+        <article><b>FLASK</b><p>Lightweight, scalable web applications.</p></article>
+        <article><b>DATABASES</b><p>SQLite and SQL-driven data storage.</p></article>
+        <article><b>HTML / CSS</b><p>Responsive and modern interfaces.</p></article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <p class="eyebrow">03 / PROJECTS</p>
+      <h2>SELECTED <span>WORK</span></h2>
+      <div class="cards projects">
+        <article><b>DATABASE WEB APP</b><p>Flask + SQLite application with forms and persistent data.</p></article>
+        <article><b>BACKEND API</b><p>Python backend architecture ready to connect with frontend clients.</p></article>
+        <article><b>DEVELOPER PORTFOLIO</b><p>This website — responsive, database-connected and built with Flask.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="eyebrow">04 / CONTACT</p>
+      <h2>LET'S <span>WORK</span><br>TOGETHER.</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>PHONE</strong><br><a href="tel:+351920631341">+351 920 631 341</a></p>
+          <p><strong>EMAIL</strong><br><a href="mailto:harkishdheer1@gmail.com">harkishdheer1@gmail.com</a></p>
+          <p><strong>LOCATION</strong><br>Portugal</p>
+        </div>
+
+        <form action="{{ url_for('contact') }}" method="POST">
+          <input name="name" type="text" placeholder="Your name" required>
+          <input name="email" type="email" placeholder="Your email" required>
+          <textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+          <button class="btn primary" type="submit">SEND MESSAGE ↗</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>HARKISH VERSE</span>
+    <span>© 2026 • PORTUGAL</span>
+  </footer>
+</body>
+</html>
