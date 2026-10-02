@@ -7,7 +7,6 @@ from functools import wraps
 
 app = Flask(__name__)
 
-# IMPORTANT: Render Environment Variable se secret key lega
 app.secret_key = os.environ.get(
     "SECRET_KEY",
     "temporary-development-secret-change-me"
@@ -24,7 +23,6 @@ def get_db():
 
 def init_db():
     with get_db() as conn:
-
         conn.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,15 +46,13 @@ def init_db():
         conn.commit()
 
 
+# HOME
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# -------------------------
 # SIGNUP
-# -------------------------
-
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
 
@@ -88,19 +84,23 @@ def signup():
                 conn.commit()
 
         except sqlite3.IntegrityError:
-            flash("An account with this email already exists.", "error")
+            flash(
+                "An account with this email already exists.",
+                "error"
+            )
             return redirect(url_for("signup"))
 
-        flash("Account created successfully. Please log in.", "success")
+        flash(
+            "Account created successfully. Please log in.",
+            "success"
+        )
+
         return redirect(url_for("login"))
 
     return render_template("signup.html")
 
 
-# -------------------------
 # LOGIN
-# -------------------------
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
@@ -115,8 +115,10 @@ def login():
                 (email,)
             ).fetchone()
 
-        if user and check_password_hash(user["password"], password):
-
+        if user and check_password_hash(
+            user["password"],
+            password
+        ):
             session.clear()
 
             session["user_id"] = user["id"]
@@ -124,6 +126,7 @@ def login():
             session["user_email"] = user["email"]
 
             flash("Login successful.", "success")
+
             return redirect(url_for("dashboard"))
 
         flash("Invalid email or password.", "error")
@@ -132,10 +135,7 @@ def login():
     return render_template("login.html")
 
 
-# -------------------------
-# DASHBOARD / PROFILE
-# -------------------------
-
+# LOGIN REQUIRED
 def login_required(function):
 
     @wraps(function)
@@ -148,6 +148,9 @@ def login_required(function):
         return function(*args, **kwargs)
 
     return wrapper
+
+
+# DASHBOARD
 @app.route("/dashboard")
 @login_required
 def dashboard():
@@ -171,27 +174,21 @@ def dashboard():
     )
 
 
-    )
-
-
-# -------------------------
 # LOGOUT
-# -------------------------
-
 @app.route("/logout")
 def logout():
 
     session.clear()
 
-    flash("You have been logged out.", "success")
+    flash(
+        "You have been logged out.",
+        "success"
+    )
 
     return redirect(url_for("home"))
 
 
-# -------------------------
 # CONTACT
-# -------------------------
-
 @app.post("/contact")
 def contact():
 
@@ -200,14 +197,22 @@ def contact():
     message = request.form.get("message", "").strip()
 
     if not name or not email or not message:
-        flash("Please fill in all fields.", "error")
-        return redirect(url_for("home") + "#contact")
+
+        flash(
+            "Please fill in all fields.",
+            "error"
+        )
+
+        return redirect(
+            url_for("home") + "#contact"
+        )
 
     with get_db() as conn:
 
         conn.execute(
             """
-            INSERT INTO messages (name, email, message)
+            INSERT INTO messages
+            (name, email, message)
             VALUES (?, ?, ?)
             """,
             (name, email, message)
@@ -220,20 +225,27 @@ def contact():
         "success"
     )
 
-    return redirect(url_for("home") + "#contact")
+    return redirect(
+        url_for("home") + "#contact"
+    )
 
 
-# -------------------------
 # ADMIN
-# -------------------------
-
 @app.route("/admin")
 @login_required
 def admin():
 
-    admin_email = os.environ.get("ADMIN_EMAIL", "").lower()
+    admin_email = os.environ.get(
+        "ADMIN_EMAIL",
+        ""
+    ).strip().lower()
 
-    if not admin_email or session.get("user_email") != admin_email:
+    current_email = session.get(
+        "user_email",
+        ""
+    ).strip().lower()
+
+    if not admin_email or current_email != admin_email:
         return "Access denied", 403
 
     with get_db() as conn:
@@ -261,14 +273,13 @@ def admin():
     )
 
 
-# -------------------------
-# START
-# -------------------------
-
+# DATABASE
 init_db()
 
 
+# START SERVER
 if __name__ == "__main__":
+
     app.run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 5000)),
