@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard — Harkish-Verse</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #09090f;
+            color: #fff;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 240px;
+            background: #11111a;
+            border-right: 1px solid #252535;
+            padding: 25px 15px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .logo span {
+            color: #8b7cff;
+        }
+
+        .nav {
+            display: block;
+            padding: 12px 14px;
+            margin: 6px 0;
+            border-radius: 9px;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .nav:hover {
+            background: #1d1d2b;
+            color: white;
+        }
+
+        .active {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        /* MAIN */
+
+        .main {
+            flex: 1;
+            padding: 30px;
+            overflow-x: hidden;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .top h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .logout {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .stat {
+            background: #11111a;
+            border: 1px solid #252535;
+            padding: 22px;
+            border-radius: 14px;
+        }
+
+        .stat h2 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        .stat p {
+            margin: 0;
+            color: #888;
+        }
+
+        /* SECTION */
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #11111a;
+            border: 1px solid #252535;
+            padding: 22px;
+            border-radius: 14px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.5;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #1c1c2a;
+            border: 1px solid #303044;
+            padding: 7px 10px;
+            border-radius: 7px;
+            font-size: 13px;
+            color: #ccc;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                width: 190px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .layout {
+                display: block;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #252535;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Harkish<span>-Verse</span>
+        </div>
+
+        <a href="#" class="nav active">📊 Dashboard</a>
+        <a href="#" class="nav">🚀 Projects</a>
+        <a href="#" class="nav">⚡ APIs</a>
+        <a href="#" class="nav">🤖 Bots & Plugins</a>
+        <a href="#" class="nav">📱 Mobile</a>
+        <a href="#" class="nav">🛠️ DevOps</a>
+        <a href="#" class="nav">💬 Messages</a>
+        <a href="#" class="nav">⚙️ Settings</a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <div class="top">
+
+            <div>
+                <h1>Developer Dashboard</h1>
+                <p style="color:#888;">
+                    Welcome back, {{ user["name"] }}
+                </p>
+            </div>
+
+            <a href="{{ url_for('logout') }}" class="logout">
+                Logout
+            </a>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat">
+                <h2>12</h2>
+                <p>Projects</p>
+            </div>
+
+            <div class="stat">
+                <h2>8</h2>
+                <p>APIs</p>
+            </div>
+
+            <div class="stat">
+                <h2>5</h2>
+                <p>Bots</p>
+            </div>
+
+            <div class="stat">
+                <h2>24/7</h2>
+                <p>Automation</p>
+            </div>
+
+        </div>
+
+
+        <!-- TECH STACK -->
+
+        <section class="section">
+
+            <h2>💻 Tech Stack</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Backend</h3>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Peewee ORM</span>
+                        <span class="tag">boto3</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Frontend</h3>
+
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Bots & Plugins</h3>
+
+                    <div class="tags">
+                        <span class="tag">discord.py</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Plugins</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Mobile</h3>
+
+                    <div class="tags">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Capacitor</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>DevOps & Tools</h3>
+
+                    <div class="tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Arch</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Netlify</span>
+                        <span class="tag">Railway</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3>Storage</h3>
+
+                    <div class="tags">
+                        <span class="tag">S3</span>
+                        <span class="tag">boto3</span>
+                        <span class="tag">Object Storage</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
