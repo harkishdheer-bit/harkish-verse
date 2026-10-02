@@ -8,3 +8,300 @@
     <p>Website is working!</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harkish-Verse</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5,5,5,.95);
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #00eaff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #00eaff;
+        }
+
+        section {
+            padding: 80px 8%;
+            min-height: 70vh;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #102a35, #050505 60%);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            color: #00eaff;
+            text-shadow: 0 0 25px #00eaff;
+        }
+
+        .hero p {
+            margin: 20px 0;
+            color: #bbb;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 8px;
+            border-radius: 30px;
+            background: #00eaff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn.dark {
+            background: transparent;
+            color: white;
+            border: 1px solid #00eaff;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+            color: #00eaff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #101010;
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 18px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #00eaff;
+            box-shadow: 0 0 20px rgba(0,234,255,.2);
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin: 8px 0;
+            padding: 14px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 10px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">HARKISH-VERSE</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gaming">Gaming</a>
+        <a href="#login">Login</a>
+        <a href="#payment">Payment</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <h1>HARKISH-VERSE</h1>
+    <p>Welcome to the next generation digital universe.</p>
+
+    <div>
+        <a class="btn" href="#gaming">Explore Gaming</a>
+        <a class="btn dark" href="#about">Discover More</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Harkish-Verse</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🚀 Our Vision</h3>
+            <p>Harkish-Verse is a modern digital space built for gaming, community and creativity.</p>
+        </div>
+
+        <div class="card">
+            <h3>✨ Modern Design</h3>
+            <p>A clean, futuristic interface designed for both mobile and desktop users.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌐 Community</h3>
+            <p>Connect, explore and build your own experience inside Harkish-Verse.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gaming">
+    <h2>🎮 Gaming Zone</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🔥 Free Fire</h3>
+            <p>Gaming content, profiles, updates and community features.</p>
+            <a class="btn" href="#">Explore</a>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Tournaments</h3>
+            <p>Future tournament and gaming-event features can be added here.</p>
+        </div>
+
+        <div class="card">
+            <h3>👑 Gamer Profiles</h3>
+            <p>Create your gaming identity and showcase your profile.</p>
+        </div>
+    </div>
+</section>
+
+<section id="login">
+    <h2>🔐 Login / Signup</h2>
+
+    <form onsubmit="demoLogin(event)">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+
+        <button class="btn" type="submit">Login</button>
+        <button class="btn dark" type="button" onclick="alert('Signup system will be connected to the backend later.')">
+            Signup
+        </button>
+    </form>
+</section>
+
+<section id="payment">
+    <h2>💳 Payment</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Secure Payments</h3>
+            <p>Payment gateway integration can be connected here.</p>
+            <button class="btn" onclick="alert('Payment gateway is not connected yet.')">
+                Pay Now
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Payment Status</h3>
+            <p>Your real payment status will appear here after backend integration.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>📞 Contact Us</h2>
+
+    <form onsubmit="contactForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Harkish-Verse — All Rights Reserved.
+</footer>
+
+<script>
+    function demoLogin(event) {
+        event.preventDefault();
+        alert("Demo login working! Real authentication will be connected later.");
+    }
+
+    function contactForm(event) {
+        event.preventDefault();
+        alert("Message form is working! Email/backend connection will be added later.");
+    }
+</script>
+
+</body>
+</html>
