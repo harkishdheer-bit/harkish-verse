@@ -1,24 +1,44 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard — Harkish-Verse</title>
+    <title>Harkish-Verse — Backend Developer</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #09090f;
-            color: #fff;
+        :root {
+            --black: #050505;
+            --black2: #0b0b0b;
+            --card: #101010;
+            --border: #242424;
+            --red: #ff2020;
+            --red-dark: #b80000;
+            --white: #ffffff;
+            --gray: #999999;
+            --gray2: #666666;
         }
 
-        .layout {
+        body {
+            margin: 0;
+            background: var(--black);
+            color: var(--white);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* APP */
+
+        .app {
             display: flex;
             min-height: 100vh;
         }
@@ -26,77 +46,121 @@
         /* SIDEBAR */
 
         .sidebar {
-            width: 240px;
-            background: #11111a;
-            border-right: 1px solid #252535;
-            padding: 25px 15px;
+            width: 255px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 25px 17px;
+            background: #080808;
+            border-right: 1px solid var(--border);
         }
 
-        .logo {
+        .brand {
+            padding: 8px 12px 30px;
+        }
+
+        .brand h2 {
+            margin: 0;
             font-size: 22px;
-            font-weight: bold;
-            padding: 10px;
-            margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
 
-        .logo span {
-            color: #8b7cff;
+        .brand h2 span {
+            color: var(--red);
+        }
+
+        .brand p {
+            margin: 7px 0 0;
+            color: var(--gray2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .menu-title {
+            color: #555;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 12px;
         }
 
         .nav {
             display: block;
-            padding: 12px 14px;
-            margin: 6px 0;
-            border-radius: 9px;
-            color: #aaa;
-            text-decoration: none;
+            padding: 12px 13px;
+            margin: 4px 0;
+            border-radius: 7px;
+            color: #888;
+            font-size: 13px;
+            transition: 0.2s;
         }
 
         .nav:hover {
-            background: #1d1d2b;
-            color: white;
+            background: #151515;
+            color: #fff;
         }
 
-        .active {
-            background: #6c5ce7;
-            color: white;
+        .nav.active {
+            background: #1a0808;
+            color: var(--red);
+            border-left: 3px solid var(--red);
+        }
+
+        .bottom {
+            position: absolute;
+            bottom: 20px;
+            left: 17px;
+            right: 17px;
         }
 
         /* MAIN */
 
         .main {
-            flex: 1;
-            padding: 30px;
-            overflow-x: hidden;
+            margin-left: 255px;
+            width: calc(100% - 255px);
+            padding: 32px;
         }
 
-        .top {
+        /* HEADER */
+
+        .header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
+            align-items: flex-start;
+            margin-bottom: 28px;
         }
 
-        .top h1 {
+        .header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 30px;
+            letter-spacing: -1px;
         }
 
-        .welcome {
-            color: #888;
-            margin-top: 8px;
+        .header p {
+            color: var(--gray);
+            margin: 8px 0 0;
+            font-size: 13px;
         }
 
-        .logout {
-            background: #e74c3c;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-decoration: none;
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            background: #120606;
+            border: 1px solid #3b1111;
+            border-radius: 20px;
+            color: var(--red);
+            font-size: 12px;
         }
 
-        .logout:hover {
-            opacity: 0.85;
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--red);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--red);
         }
 
         /* STATS */
@@ -104,77 +168,285 @@
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .stat {
-            background: #11111a;
-            border: 1px solid #252535;
-            padding: 22px;
-            border-radius: 14px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .stat h2 {
-            margin: 0 0 8px;
-            font-size: 28px;
+        .stat::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--red);
         }
 
-        .stat p {
-            margin: 0;
-            color: #888;
+        .stat-label {
+            color: var(--gray);
+            font-size: 10px;
+            letter-spacing: 1px;
         }
 
-        /* SECTION */
-
-        .section {
-            margin-top: 30px;
+        .stat-value {
+            margin-top: 10px;
+            font-size: 27px;
+            font-weight: 700;
         }
 
-        .section h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
+        .stat-info {
+            margin-top: 7px;
+            color: var(--red);
+            font-size: 10px;
         }
+
+        /* GRID */
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 2fr 1fr;
             gap: 18px;
         }
 
-        .card {
-            background: #11111a;
-            border: 1px solid #252535;
-            padding: 22px;
-            border-radius: 14px;
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 21px;
         }
 
-        .card h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
         }
 
-        .tags {
+        .panel-header h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .panel-header span {
+            color: #555;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* PROFILE */
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--red);
+            color: white;
+            border-radius: 8px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .profile h3 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .profile p {
+            margin: 5px 0 0;
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        /* TECHNOLOGIES */
+
+        .technologies {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .tag {
-            background: #1c1c2a;
-            border: 1px solid #303044;
-            padding: 7px 10px;
-            border-radius: 7px;
+        .tech {
+            padding: 8px 10px;
+            background: #151515;
+            border: 1px solid #292929;
+            color: #ddd;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+
+        .tech:hover {
+            border-color: var(--red);
+            color: white;
+        }
+
+        /* PROJECTS */
+
+        .project {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #1d1d1d;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project-name {
             font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-desc {
+            margin-top: 5px;
+            color: var(--gray2);
+            font-size: 10px;
+        }
+
+        .badge {
+            padding: 5px 8px;
+            border: 1px solid #641010;
+            background: #190606;
+            color: var(--red);
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        /* API */
+
+        .api-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #1d1d1d;
+            font-size: 11px;
+        }
+
+        .api-row:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            color: var(--red);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .endpoint {
+            color: #ddd;
+        }
+
+        .api-status {
+            color: white;
+        }
+
+        /* DATABASE */
+
+        .database-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #1d1d1d;
+            color: var(--gray);
+            font-size: 11px;
+        }
+
+        .database-item:last-child {
+            border-bottom: none;
+        }
+
+        .database-item strong {
+            color: white;
+        }
+
+        /* SERVICES */
+
+        .service {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #1d1d1d;
+            font-size: 11px;
+        }
+
+        .service:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
             color: #ccc;
         }
 
-        /* MOBILE */
+        .service-status {
+            color: var(--red);
+        }
 
-        @media (max-width: 900px) {
+        /* ENGINEERING */
 
-            .sidebar {
-                width: 190px;
-            }
+        .engineering {
+            margin-top: 18px;
+        }
+
+        .engineering-item {
+            padding: 13px 0;
+            border-bottom: 1px solid #1d1d1d;
+        }
+
+        .engineering-item:last-child {
+            border-bottom: none;
+        }
+
+        .engineering-item strong {
+            font-size: 12px;
+        }
+
+        .engineering-item p {
+            margin: 5px 0 0;
+            color: var(--gray2);
+            font-size: 10px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 25px;
+            padding: 15px 0;
+            border-top: 1px solid var(--border);
+            color: #555;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .footer span {
+            color: var(--red);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
 
             .stats {
                 grid-template-columns: repeat(2, 1fr);
@@ -185,26 +457,33 @@
             }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
-            .layout {
+            .app {
                 display: block;
             }
 
             .sidebar {
+                position: relative;
                 width: 100%;
                 border-right: none;
-                border-bottom: 1px solid #252535;
+                border-bottom: 1px solid var(--border);
             }
 
             .main {
+                width: 100%;
+                margin-left: 0;
                 padding: 20px;
             }
 
-            .top {
-                align-items: flex-start;
-                gap: 15px;
+            .bottom {
+                position: static;
+                margin-top: 20px;
+            }
+
+            .header {
                 flex-direction: column;
+                gap: 15px;
             }
 
             .stats {
@@ -216,47 +495,60 @@
 
 <body>
 
-<div class="layout">
+<div class="app">
 
     <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
-        <div class="logo">
-            Harkish<span>-Verse</span>
+        <div class="brand">
+            <h2>Harkish<span>-Verse</span></h2>
+            <p>Backend Developer</p>
         </div>
 
+        <div class="menu-title">Workspace</div>
+
         <a href="#" class="nav active">
-            📊 Dashboard
+            ◈ Overview
         </a>
 
         <a href="#" class="nav">
-            🚀 Projects
+            ⌘ Projects
         </a>
 
         <a href="#" class="nav">
-            ⚡ APIs
+            ⇄ APIs
         </a>
 
         <a href="#" class="nav">
-            🤖 Bots & Plugins
+            ◉ Database
         </a>
 
         <a href="#" class="nav">
-            📱 Mobile
+            ◇ Services
+        </a>
+
+        <div class="menu-title">Engineering</div>
+
+        <a href="#" class="nav">
+            ◫ Deployments
         </a>
 
         <a href="#" class="nav">
-            🛠️ DevOps
+            ◌ Logs
         </a>
 
         <a href="#" class="nav">
-            💬 Messages
+            ⚙ Settings
         </a>
 
-        <a href="#" class="nav">
-            ⚙️ Settings
-        </a>
+        <div class="bottom">
+
+            <a href="{{ url_for('logout') }}" class="nav">
+                ← Logout
+            </a>
+
+        </div>
 
     </aside>
 
@@ -265,172 +557,629 @@
 
     <main class="main">
 
-        <div class="top">
+        <header class="header">
 
             <div>
-                <h1>Developer Dashboard</h1>
 
-                <p class="welcome">
-                    Welcome back, {{ name }}
+                <h1>Backend Overview</h1>
+
+                <p>
+                    Welcome back, {{ name }} ·
+                    Backend infrastructure & API dashboard
                 </p>
+
             </div>
 
-            <a href="{{ url_for('logout') }}" class="logout">
-                Logout
-            </a>
+            <div class="status">
 
-        </div>
+                <span class="status-dot"></span>
+
+                Systems Operational
+
+            </div>
+
+        </header>
 
 
         <!-- STATS -->
 
-        <div class="stats">
+        <section class="stats">
 
             <div class="stat">
-                <h2>{{ user_count }}</h2>
-                <p>Users</p>
+
+                <div class="stat-label">
+                    REGISTERED USERS
+                </div>
+
+                <div class="stat-value">
+                    {{ user_count }}
+                </div>
+
+                <div class="stat-info">
+                    DATABASE RECORDS
+                </div>
+
             </div>
+
 
             <div class="stat">
-                <h2>0</h2>
-                <p>APIs</p>
+
+                <div class="stat-label">
+                    API ENDPOINTS
+                </div>
+
+                <div class="stat-value">
+                    06
+                </div>
+
+                <div class="stat-info">
+                    REST SERVICES
+                </div>
+
             </div>
+
 
             <div class="stat">
-                <h2>0</h2>
-                <p>Bots</p>
+
+                <div class="stat-label">
+                    MESSAGES
+                </div>
+
+                <div class="stat-value">
+                    {{ message_count }}
+                </div>
+
+                <div class="stat-info">
+                    CONTACT REQUESTS
+                </div>
+
             </div>
+
 
             <div class="stat">
-                <h2>{{ message_count }}</h2>
-                <p>Messages</p>
-            </div>
 
-        </div>
-
-
-        <!-- TECH STACK -->
-
-        <section class="section">
-
-            <h2>💻 Tech Stack</h2>
-
-            <div class="grid">
-
-                <!-- BACKEND -->
-
-                <div class="card">
-
-                    <h3>Backend</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">Python</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">REST APIs</span>
-                        <span class="tag">SQLite</span>
-                        <span class="tag">Peewee ORM</span>
-                        <span class="tag">boto3</span>
-
-                    </div>
-
+                <div class="stat-label">
+                    SYSTEM UPTIME
                 </div>
 
-
-                <!-- FRONTEND -->
-
-                <div class="card">
-
-                    <h3>Frontend</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">React</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Tailwind CSS</span>
-                        <span class="tag">Vite</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-
-                    </div>
-
+                <div class="stat-value">
+                    99.9%
                 </div>
 
-
-                <!-- BOTS -->
-
-                <div class="card">
-
-                    <h3>Bots & Plugins</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">discord.py</span>
-                        <span class="tag">Gemini</span>
-                        <span class="tag">Plugins</span>
-                        <span class="tag">Automation</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MOBILE -->
-
-                <div class="card">
-
-                    <h3>Mobile</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">Kotlin</span>
-                        <span class="tag">Capacitor</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- DEVOPS -->
-
-                <div class="card">
-
-                    <h3>DevOps & Tools</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">Docker</span>
-                        <span class="tag">Linux</span>
-                        <span class="tag">Arch</span>
-                        <span class="tag">Git</span>
-                        <span class="tag">GitHub</span>
-                        <span class="tag">Netlify</span>
-                        <span class="tag">Railway</span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- STORAGE -->
-
-                <div class="card">
-
-                    <h3>Storage</h3>
-
-                    <div class="tags">
-
-                        <span class="tag">S3</span>
-                        <span class="tag">boto3</span>
-                        <span class="tag">Object Storage</span>
-
-                    </div>
-
+                <div class="stat-info">
+                    SERVICE STATUS
                 </div>
 
             </div>
 
         </section>
+
+
+        <div class="grid">
+
+
+            <!-- LEFT COLUMN -->
+
+            <div>
+
+
+                <!-- PROFILE / STACK -->
+
+                <section class="panel">
+
+                    <div class="profile">
+
+                        <div class="avatar">
+                            H
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                {{ name }}
+                            </h3>
+
+                            <p>
+                                {{ email }} · Backend Developer
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Backend Technology Stack
+                        </h2>
+
+                        <span>
+                            CORE
+                        </span>
+
+                    </div>
+
+
+                    <div class="technologies">
+
+                        <span class="tech">Python</span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">Flask</span>
+                        <span class="tech">REST APIs</span>
+                        <span class="tech">SQLite</span>
+                        <span class="tech">Peewee ORM</span>
+                        <span class="tech">boto3</span>
+                        <span class="tech">S3</span>
+                        <span class="tech">Docker</span>
+                        <span class="tech">Linux</span>
+                        <span class="tech">Arch Linux</span>
+                        <span class="tech">Git</span>
+                        <span class="tech">GitHub</span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PROJECTS -->
+
+                <section class="panel" style="margin-top:18px;">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Backend Projects
+                        </h2>
+
+                        <span>
+                            PROJECTS
+                        </span>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div>
+
+                            <div class="project-name">
+                                Harkish-Verse Backend
+                            </div>
+
+                            <div class="project-desc">
+                                Flask authentication, sessions and SQLite database
+                            </div>
+
+                        </div>
+
+                        <span class="badge">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div>
+
+                            <div class="project-name">
+                                REST API Services
+                            </div>
+
+                            <div class="project-desc">
+                                Structured API endpoints for application services
+                            </div>
+
+                        </div>
+
+                        <span class="badge">
+                            API
+                        </span>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div>
+
+                            <div class="project-name">
+                                Automation Engine
+                            </div>
+
+                            <div class="project-desc">
+                                Python automation and backend workflows
+                            </div>
+
+                        </div>
+
+                        <span class="badge">
+                            PYTHON
+                        </span>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div>
+
+                            <div class="project-name">
+                                AI Chatbot Services
+                            </div>
+
+                            <div class="project-desc">
+                                Gemini based chatbot integrations
+                            </div>
+
+                        </div>
+
+                        <span class="badge">
+                            AI
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- API -->
+
+                <section class="panel" style="margin-top:18px;">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            API Endpoints
+                        </h2>
+
+                        <span>
+                            REST
+                        </span>
+
+                    </div>
+
+
+                    <div class="api-row">
+
+                        <div>
+                            <span class="method">GET</span>
+                            <span class="endpoint">/</span>
+                        </div>
+
+                        <span class="api-status">
+                            200 OK
+                        </span>
+
+                    </div>
+
+
+                    <div class="api-row">
+
+                        <div>
+                            <span class="method">POST</span>
+                            <span class="endpoint">/signup</span>
+                        </div>
+
+                        <span class="api-status">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="api-row">
+
+                        <div>
+                            <span class="method">POST</span>
+                            <span class="endpoint">/login</span>
+                        </div>
+
+                        <span class="api-status">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="api-row">
+
+                        <div>
+                            <span class="method">POST</span>
+                            <span class="endpoint">/contact</span>
+                        </div>
+
+                        <span class="api-status">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="api-row">
+
+                        <div>
+                            <span class="method">GET</span>
+                            <span class="endpoint">/dashboard</span>
+                        </div>
+
+                        <span class="api-status">
+                            AUTH
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+
+            <div>
+
+
+                <!-- DATABASE -->
+
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Database
+                        </h2>
+
+                        <span>
+                            SQLITE
+                        </span>
+
+                    </div>
+
+
+                    <div class="database-item">
+
+                        <span>
+                            Users
+                        </span>
+
+                        <strong>
+                            {{ user_count }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="database-item">
+
+                        <span>
+                            Messages
+                        </span>
+
+                        <strong>
+                            {{ message_count }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="database-item">
+
+                        <span>
+                            ORM
+                        </span>
+
+                        <strong>
+                            Peewee
+                        </strong>
+
+                    </div>
+
+
+                    <div class="database-item">
+
+                        <span>
+                            Storage
+                        </span>
+
+                        <strong>
+                            S3
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SERVICES -->
+
+                <section class="panel" style="margin-top:18px;">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Services
+                        </h2>
+
+                        <span>
+                            STATUS
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <span class="service-name">
+                            Flask
+                        </span>
+
+                        <span class="service-status">
+                            RUNNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <span class="service-name">
+                            Gunicorn
+                        </span>
+
+                        <span class="service-status">
+                            RUNNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <span class="service-name">
+                            SQLite
+                        </span>
+
+                        <span class="service-status">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <span class="service-name">
+                            Docker
+                        </span>
+
+                        <span class="service-status">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <div class="service">
+
+                        <span class="service-name">
+                            S3 / boto3
+                        </span>
+
+                        <span class="service-status">
+                            READY
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ENGINEERING -->
+
+                <section class="panel engineering">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Engineering Tools
+                        </h2>
+
+                        <span>
+                            DEVOPS
+                        </span>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Git & GitHub
+                        </strong>
+
+                        <p>
+                            Version control & source management
+                        </p>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Docker
+                        </strong>
+
+                        <p>
+                            Containerized development
+                        </p>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Linux / Arch
+                        </strong>
+
+                        <p>
+                            Backend development environment
+                        </p>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Railway
+                        </strong>
+
+                        <p>
+                            Backend deployment
+                        </p>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Discord.py
+                        </strong>
+
+                        <p>
+                            Bot & automation services
+                        </p>
+
+                    </div>
+
+
+                    <div class="engineering-item">
+
+                        <strong>
+                            Gemini
+                        </strong>
+
+                        <p>
+                            AI chatbot integration
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            Harkish<span>-Verse</span> · Backend Developer Dashboard
+        </div>
 
     </main>
 
@@ -438,3 +1187,4 @@
 
 </body>
 </html>
+```
