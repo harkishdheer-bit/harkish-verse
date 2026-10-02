@@ -82,12 +82,21 @@
             font-size: 28px;
         }
 
+        .welcome {
+            color: #888;
+            margin-top: 8px;
+        }
+
         .logout {
             background: #e74c3c;
             color: white;
             padding: 10px 16px;
             border-radius: 8px;
             text-decoration: none;
+        }
+
+        .logout:hover {
+            opacity: 0.85;
         }
 
         /* STATS */
@@ -141,11 +150,7 @@
 
         .card h3 {
             margin-top: 0;
-        }
-
-        .card p {
-            color: #999;
-            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
         .tags {
@@ -196,6 +201,12 @@
                 padding: 20px;
             }
 
+            .top {
+                align-items: flex-start;
+                gap: 15px;
+                flex-direction: column;
+            }
+
             .stats {
                 grid-template-columns: 1fr;
             }
@@ -215,14 +226,37 @@
             Harkish<span>-Verse</span>
         </div>
 
-        <a href="#" class="nav active">📊 Dashboard</a>
-        <a href="#" class="nav">🚀 Projects</a>
-        <a href="#" class="nav">⚡ APIs</a>
-        <a href="#" class="nav">🤖 Bots & Plugins</a>
-        <a href="#" class="nav">📱 Mobile</a>
-        <a href="#" class="nav">🛠️ DevOps</a>
-        <a href="#" class="nav">💬 Messages</a>
-        <a href="#" class="nav">⚙️ Settings</a>
+        <a href="#" class="nav active">
+            📊 Dashboard
+        </a>
+
+        <a href="#" class="nav">
+            🚀 Projects
+        </a>
+
+        <a href="#" class="nav">
+            ⚡ APIs
+        </a>
+
+        <a href="#" class="nav">
+            🤖 Bots & Plugins
+        </a>
+
+        <a href="#" class="nav">
+            📱 Mobile
+        </a>
+
+        <a href="#" class="nav">
+            🛠️ DevOps
+        </a>
+
+        <a href="#" class="nav">
+            💬 Messages
+        </a>
+
+        <a href="#" class="nav">
+            ⚙️ Settings
+        </a>
 
     </aside>
 
@@ -235,8 +269,9 @@
 
             <div>
                 <h1>Developer Dashboard</h1>
-                <p style="color:#888;">
-                    Welcome back, {{ user["name"] }}
+
+                <p class="welcome">
+                    Welcome back, {{ name }}
                 </p>
             </div>
 
@@ -252,23 +287,23 @@
         <div class="stats">
 
             <div class="stat">
-                <h2>12</h2>
-                <p>Projects</p>
+                <h2>{{ user_count }}</h2>
+                <p>Users</p>
             </div>
 
             <div class="stat">
-                <h2>8</h2>
+                <h2>0</h2>
                 <p>APIs</p>
             </div>
 
             <div class="stat">
-                <h2>5</h2>
+                <h2>0</h2>
                 <p>Bots</p>
             </div>
 
             <div class="stat">
-                <h2>24/7</h2>
-                <p>Automation</p>
+                <h2>{{ message_count }}</h2>
+                <p>Messages</p>
             </div>
 
         </div>
@@ -282,60 +317,88 @@
 
             <div class="grid">
 
+                <!-- BACKEND -->
+
                 <div class="card">
+
                     <h3>Backend</h3>
 
                     <div class="tags">
+
                         <span class="tag">Python</span>
                         <span class="tag">FastAPI</span>
                         <span class="tag">REST APIs</span>
                         <span class="tag">SQLite</span>
                         <span class="tag">Peewee ORM</span>
                         <span class="tag">boto3</span>
+
                     </div>
+
                 </div>
 
 
+                <!-- FRONTEND -->
+
                 <div class="card">
+
                     <h3>Frontend</h3>
 
                     <div class="tags">
+
                         <span class="tag">React</span>
                         <span class="tag">JavaScript</span>
                         <span class="tag">Tailwind CSS</span>
                         <span class="tag">Vite</span>
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
+
                     </div>
+
                 </div>
 
 
+                <!-- BOTS -->
+
                 <div class="card">
+
                     <h3>Bots & Plugins</h3>
 
                     <div class="tags">
+
                         <span class="tag">discord.py</span>
                         <span class="tag">Gemini</span>
                         <span class="tag">Plugins</span>
                         <span class="tag">Automation</span>
+
                     </div>
+
                 </div>
 
 
+                <!-- MOBILE -->
+
                 <div class="card">
+
                     <h3>Mobile</h3>
 
                     <div class="tags">
+
                         <span class="tag">Kotlin</span>
                         <span class="tag">Capacitor</span>
+
                     </div>
+
                 </div>
 
 
+                <!-- DEVOPS -->
+
                 <div class="card">
+
                     <h3>DevOps & Tools</h3>
 
                     <div class="tags">
+
                         <span class="tag">Docker</span>
                         <span class="tag">Linux</span>
                         <span class="tag">Arch</span>
@@ -343,18 +406,26 @@
                         <span class="tag">GitHub</span>
                         <span class="tag">Netlify</span>
                         <span class="tag">Railway</span>
+
                     </div>
+
                 </div>
 
 
+                <!-- STORAGE -->
+
                 <div class="card">
+
                     <h3>Storage</h3>
 
                     <div class="tags">
+
                         <span class="tag">S3</span>
                         <span class="tag">boto3</span>
                         <span class="tag">Object Storage</span>
+
                     </div>
+
                 </div>
 
             </div>
