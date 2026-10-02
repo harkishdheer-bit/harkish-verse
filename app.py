@@ -148,16 +148,29 @@ def login_required(function):
         return function(*args, **kwargs)
 
     return wrapper
-
-
 @app.route("/dashboard")
 @login_required
 def dashboard():
 
+    with get_db() as conn:
+
+        user_count = conn.execute(
+            "SELECT COUNT(*) FROM users"
+        ).fetchone()[0]
+
+        message_count = conn.execute(
+            "SELECT COUNT(*) FROM messages"
+        ).fetchone()[0]
+
     return render_template(
         "dashboard.html",
         name=session.get("user_name"),
-        email=session.get("user_email")
+        email=session.get("user_email"),
+        user_count=user_count,
+        message_count=message_count
+    )
+
+
     )
 
 
