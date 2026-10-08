@@ -452,25 +452,3 @@ if __name__ == "__main__":
         debug=False
     )
 
-@app.route("/robots.txt")
-def seo_robots_txt():
-    response = make_response(
-        "User-agent: *\n"
-        "Allow: /\n\n"
-        "Sitemap: https://harkish-verse-6x1q.onrender.com/sitemap.xml\n"
-    )
-    response.headers["Content-Type"] = "text/plain"
-    return response
-
-
-@app.route("/sitemap.xml")
-def sitemap():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://harkish-verse-6x1q.onrender.com/</loc>
-    </url>
-</urlset>"""
-    response = make_response(xml)
-    response.headers["Content-Type"] = "application/xml"
-    return response
