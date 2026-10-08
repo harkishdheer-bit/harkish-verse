@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://harkish-verse-6x1q.onrender.com/sitemap.xml
