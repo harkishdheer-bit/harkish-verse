@@ -429,7 +429,7 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
-    margin: 35px 0;
+    margin: 36px 0;
 }
 
 .hire-details > div {
