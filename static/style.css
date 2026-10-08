@@ -424,6 +424,55 @@ footer p {
     .project-card {
         padding: 22px;
     }
+```css id="q7k3mz"
+.hire-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 35px 0;
+}
+
+.hire-details > div {
+    padding: 22px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hire-details > div:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 48, 59, 0.45);
+}
+
+.detail-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.hire-details p,
+.hire-details a {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.hire-details a {
+    text-decoration: none;
+}
+
+.hire-details a:hover {
+    color: #ff303b;
+}
+
+@media (max-width: 800px) {
+    .hire-details {
+        grid-template-columns: 1fr;
+    }
+}
+```
 
     footer {
         flex-direction: column;
