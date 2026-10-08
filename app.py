@@ -453,7 +453,7 @@ if __name__ == "__main__":
     )
 
 @app.route("/robots.txt")
-def robots_txt():
+def seo_robots_txt():
     response = make_response(
         "User-agent: *\n"
         "Allow: /\n\n"
