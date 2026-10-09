@@ -269,40 +269,60 @@
 
 
         ```html
+```html
 <section class="contact-section" id="contact">
     <p class="section-label">04 / HIRE HARKISH</p>
 
-    <h2>Let's build something<br><span>great together! ✦</span></h2>
+    <h2>Let's build something<br><span>great together.</span></h2>
 
     <p>
         Have a project idea, website concept, or backend challenge?
-        Tell me what you're building and let's start a conversation.
+        Send me a message and I'll get back to you.
     </p>
 
-    <div class="hire-details">
-        <div>
-            <span class="detail-label">EMAIL</span>
-            <a href="mailto:harkishdheer1@gmail.com">
-                harkishdheer1@gmail.com
-            </a>
+    <form class="hire-form" action="/contact" method="POST">
+
+        <div class="form-group">
+            <label for="name">NAME</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+            >
         </div>
 
-        <div>
-            <span class="detail-label">ROLE</span>
-            <p>Backend Developer</p>
+        <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+            >
         </div>
 
-        <div>
-            <span class="detail-label">FOCUS</span>
-            <p>Python · APIs · Databases · Web</p>
+        <div class="form-group">
+            <label for="message">MESSAGE</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
         </div>
-    </div>
 
-    <a class="button-primary"
-       href="mailto:harkishdheer1@gmail.com?subject=Project%20Inquiry%20for%20HARKISH">
-        Hire Harkish ↗
-    </a>
+        <button type="submit" class="button-primary">
+            Send Message ↗
+        </button>
+
+    </form>
 </section>
+```
+
 ```
 
     </main>
