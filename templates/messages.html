@@ -1,0 +1,47 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | Harkish-Verse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background: #050505;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 { color: #ff303b; }
+        .message {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 15px 0;
+            overflow-wrap: anywhere;
+        }
+        .muted { color: #aaa; }
+        a { color: #ff303b; }
+    </style>
+</head>
+<body>
+    <h1>Contact Messages</h1>
+    <p class="muted">Messages received through your website.</p>
+    <p><a href="{{ url_for('dashboard') }}">← Back to Dashboard</a></p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">
+                <h3>{{ message["name"] }}</h3>
+                <p>Email: {{ message["email"] }}</p>
+                <p>{{ message["message"] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No messages found yet.</p>
+    {% endif %}
+</body>
+</html>
+```
