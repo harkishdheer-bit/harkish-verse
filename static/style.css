@@ -85,7 +85,7 @@ nav a:hover {
     min-height: 650px;
     padding: 100px 8%;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: 70px;
     background:
