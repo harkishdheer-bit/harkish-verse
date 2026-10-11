@@ -500,6 +500,7 @@ footer p {
     font: inherit;
     border-radius: 4px;
     outline: none;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
