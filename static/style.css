@@ -424,7 +424,7 @@ footer p {
     .project-card {
         padding: 22px;
     }
-```css id="q7k3mz"
+ id="q7k3mz"
 .hire-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -472,7 +472,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
-```
+
 .hire-form {
     max-width: 650px;
     margin-top: 35px;
