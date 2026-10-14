@@ -137,3 +137,13 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 @media(max-width:850px){.hero-visual{min-height:520px}.hero-visual .hero-art-image{inset:-3% -8% auto!important;width:116%!important;height:100%!important}}
 @media(max-width:650px){.hero-visual{min-height:390px}.hero-visual .hero-art-image{inset:0 -5% auto!important;width:110%!important;height:100%!important;animation:none}}
 @media(prefers-reduced-motion:reduce){.hero-visual .hero-art-image{animation:none}}
+
+/* Animated HARKISH ERA sword identity */
+.logo{display:inline-flex;align-items:center;gap:2px}
+.logo-mark{position:relative;display:inline-grid;place-items:center;margin-right:7px;width:29px;height:29px;border:1px solid #ff344477;border-radius:7px;color:#ff3449;font-size:18px;line-height:1;filter:drop-shadow(0 0 5px #ff344455);animation:swordPulse 2.8s ease-in-out infinite;transform-origin:center}
+.logo-mark::after{content:"";position:absolute;inset:-4px;border-radius:9px;border:1px solid #ff3449;opacity:0;animation:swordRing 2.8s ease-out infinite;pointer-events:none}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.08);filter:drop-shadow(0 0 12px #ff3444aa)}
+.logo>span:last-child{color:var(--red)}
+@keyframes swordPulse{0%,100%{text-shadow:0 0 3px #ff344455;box-shadow:0 0 0 #ff344400}50%{text-shadow:0 0 10px #ff3444;box-shadow:0 0 14px #ff344422}}
+@keyframes swordRing{0%{transform:scale(.86);opacity:.55}100%{transform:scale(1.45);opacity:0}}
+@media(prefers-reduced-motion:reduce){.logo-mark,.logo-mark::after{animation:none!important}}
