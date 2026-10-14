@@ -110,3 +110,12 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 .server-ip{display:inline-block;margin-top:5px;color:#ff6672;font-family:var(--mono);font-weight:500;overflow-wrap:anywhere}
 .project-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
 @media(max-width:650px){.social-links{gap:7px}.social-links a{font-size:9px;padding:7px 9px}}
+
+
+/* Fix: keep the hero artwork visible in the visual stacking layer */
+.hero-visual{position:relative;isolation:isolate;overflow:visible}
+.hero-visual::before{z-index:0;inset:-12% -14%;opacity:1;background-position:center;background-size:contain}
+.hero-visual .terminal{position:relative;z-index:2}
+.hero-visual .orb{z-index:1}
+.hero-visual .floating-chip{z-index:3}
+@media(max-width:650px){.hero-visual::before{inset:-5% -10%;opacity:.82}}
