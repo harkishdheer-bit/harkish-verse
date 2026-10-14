@@ -1,37 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" fill="none">
 <defs>
- <radialGradient id="fire" cx="50%" cy="45%" r="55%"><stop stop-color="#ff172b" stop-opacity=".65"/><stop offset="1" stop-color="#ff172b" stop-opacity="0"/></radialGradient>
- <linearGradient id="hood" x1="300" y1="130" x2="610" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#29252b"/><stop offset=".42" stop-color="#101014"/><stop offset="1" stop-color="#030304"/></linearGradient>
- <linearGradient id="edge" x1="230" y1="180" x2="650" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#ff2439"/><stop offset=".5" stop-color="#7c0919"/><stop offset="1" stop-color="#16050a"/></linearGradient>
- <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
- <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <radialGradient id="aura"><stop stop-color="#ff102c" stop-opacity=".48"/><stop offset="1" stop-color="#ff102c" stop-opacity="0"/></radialGradient>
+ <linearGradient id="steel" x1="380" y1="160" x2="525" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1f2"/><stop offset=".18" stop-color="#ff3047"/><stop offset=".48" stop-color="#7b0a1b"/><stop offset=".72" stop-color="#171217"/><stop offset="1" stop-color="#ff2039"/></linearGradient>
+ <linearGradient id="hilt" x1="390" y1="200" x2="510" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#ff4a5a"/><stop offset=".5" stop-color="#161116"/><stop offset="1" stop-color="#b20d27"/></linearGradient>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
 </defs>
-<rect width="900" height="760" fill="#09090b"/>
-<ellipse cx="455" cy="365" rx="340" ry="325" fill="url(#fire)"/>
-<g stroke="#ff1d35" stroke-opacity=".35" stroke-width="2" filter="url(#glow)">
- <path d="M145 510 230 430 185 365 265 320 238 255 323 205"/>
- <path d="M700 520 646 445 706 385 648 330 702 268 650 220"/>
- <path d="M280 150 330 195 315 240 360 278"/>
- <path d="M620 160 575 205 596 250 552 288"/>
+<rect width="900" height="760" fill="#080709"/>
+<ellipse cx="450" cy="380" rx="355" ry="350" fill="url(#aura)"/>
+<g stroke="#ff1c36" stroke-opacity=".35"><circle cx="450" cy="365" r="300"/><circle cx="450" cy="365" r="270"/><path d="M120 400 230 330 200 280 300 220M780 400 670 330 700 280 600 220"/></g>
+<g fill="#ff243e" opacity=".9" filter="url(#glow)">
+ <path d="M280 580C205 510 255 460 306 425c-15 65 29 68 41 99-6-69 33-105 64-152-4 82 47 102 12 175-25 52-83 77-143 33Z"/>
+ <path d="M620 580c75-70 25-120-26-155 15 65-29 68-41 99 6-69-33-105-64-152 4 82-47 102-12 175 25 52 83 77 143 33Z"/>
+ <path d="M345 280c-60-75 3-104 16-150 26 40 10 65 31 84 5-56 43-76 44-127 47 68 31 119 9 155Z" opacity=".65"/>
+ <path d="M555 280c60-75-3-104-16-150-26 40-10 65-31 84-5-56-43-76-44-127-47 68-31 119-9 155Z" opacity=".65"/>
 </g>
-<ellipse cx="445" cy="650" rx="250" ry="45" fill="#ff1129" opacity=".18" filter="url(#blur)"/>
-<!-- hood silhouette -->
-<path d="M210 685c22-115 50-192 105-244 27-25 52-39 70-48-31-35-43-81-36-133 9-74 56-133 126-140 80-8 141 48 151 128 7 58-9 108-42 145 40 18 81 50 110 94 41 61 59 124 72 198H210Z" fill="url(#hood)" stroke="url(#edge)" stroke-width="5"/>
-<!-- hood rim -->
-<path d="M349 263c-12-66 14-139 67-169 43-25 96-23 135 7 40 31 58 82 48 137-6 37-23 68-48 91-30 27-67 40-104 31-47-11-85-47-98-97Z" fill="#08080b" stroke="#ff263b" stroke-width="4"/>
-<!-- face shadow -->
-<path d="M392 242c5-47 31-88 68-101 30-10 62 0 80 25 17 23 20 56 10 84-12 33-40 57-74 61-38 4-70-24-84-69Z" fill="#030304"/>
-<path d="M411 216c25-22 57-33 89-25" stroke="#ff3347" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
-<!-- shoulder jacket -->
-<path d="M312 459c-43 37-70 95-89 226h469c-20-129-58-198-121-236l-57 48-65-2-66-36-71 0Z" fill="#0b0b0f" stroke="#3b0c16" stroke-width="3"/>
-<path d="m386 449 61 42 70-7 44-39-15 99-67 45-79-45-14-95Z" fill="#111116" stroke="#69101f" stroke-width="3"/>
-<!-- HARKISH slash emblem -->
-<g transform="translate(450 520)" fill="#ff2439" filter="url(#glow)">
- <path d="M-35-29 -8-60 -19-15 -46 16Z"/><path d="M9-29 36-60 25-15 -2 16Z"/><path d="M-7 7 20-24 9 21 -18 52Z"/>
+<g filter="url(#glow)" stroke-linejoin="round">
+ <!-- blade -->
+ <path d="M432 300 450 74 468 300 450 548Z" fill="url(#steel)" stroke="#ff4053" stroke-width="3"/>
+ <path d="M450 105 450 515" stroke="#fff0f1" stroke-opacity=".75" stroke-width="2"/>
+ <path d="M437 300 450 185 463 300 450 485Z" fill="#100b10" opacity=".7"/>
+ <!-- crossguard -->
+ <path d="M365 294 406 270 432 292 450 312 468 292 494 270 535 294 500 310 472 326 450 339 428 326 400 310Z" fill="url(#hilt)" stroke="#ff344b" stroke-width="4"/>
+ <path d="M405 278 450 314 495 278M450 314V350" stroke="#ffd6da" stroke-opacity=".65" stroke-width="2"/>
+ <!-- grip -->
+ <path d="M431 337 469 337 466 415 450 438 434 415Z" fill="#130e13" stroke="#a80e27" stroke-width="3"/>
+ <path d="m434 351 32 14m-32 2 32 14m-32 2 32 14m-32 2 25 11" stroke="#ff3b50" stroke-width="4"/>
+ <!-- pommel -->
+ <path d="m450 425 24 25-24 32-24-32Z" fill="#170c12" stroke="#ff344b" stroke-width="3"/>
+ <path d="m450 438 11 12-11 15-11-15Z" fill="#ff334b"/>
 </g>
-<path d="M242 596c20-77 51-116 96-145" stroke="#ff2038" stroke-opacity=".65" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
-<path d="M670 594c-19-65-43-102-80-132" stroke="#ff2038" stroke-opacity=".55" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
-<g fill="#ff3348" opacity=".8"><circle cx="268" cy="314" r="3"/><circle cx="665" cy="282" r="2"/><circle cx="310" cy="190" r="2"/><circle cx="626" cy="390" r="3"/><circle cx="222" cy="440" r="2"/><circle cx="696" cy="455" r="2"/></g>
-<text x="42" y="68" fill="#ff3444" font-family="monospace" font-size="17" letter-spacing="5">HARKISH / ERA</text>
-<text x="44" y="98" fill="#777780" font-family="monospace" font-size="10" letter-spacing="3">BUILD • LEARN • REPEAT</text>
+<g stroke="#ff253d" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+ <path d="M365 355c-62 34-58 83-18 105M535 355c62 34 58 83 18 105"/>
+ <path d="M350 470c-38 25-32 55-4 72M550 470c38 25 32 55 4 72"/>
+ <path d="M390 225c-42-36-24-69-4-89M510 225c42-36 24-69 4-89"/>
+</g>
+<text x="450" y="590" fill="#ff293f" stroke="#ff7b88" stroke-width=".7" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="69" font-weight="900" letter-spacing="3">HARKISH</text>
+<path d="M275 612H380M520 612H625" stroke="#ff2d43" stroke-width="3"/>
+<text x="450" y="626" fill="#fff0f2" text-anchor="middle" font-family="monospace" font-size="23" letter-spacing="12">ERA</text>
+<text x="450" y="687" fill="#8d858c" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="5">BUILD • LEARN • REPEAT</text>
+<g fill="#ff3047"><circle cx="234" cy="244" r="3"/><circle cx="663" cy="290" r="2"/><circle cx="300" cy="520" r="2"/><circle cx="610" cy="505" r="3"/><circle cx="568" cy="170" r="2"/><circle cx="330" cy="178" r="2"/></g>
 </svg>
