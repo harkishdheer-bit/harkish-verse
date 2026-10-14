@@ -177,3 +177,21 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 @media(max-width:850px){.hero-visual .hero-art-image{max-height:520px!important;max-width:520px!important}}
 @media(max-width:650px){.hero-visual{min-height:0!important;margin-top:18px!important}.hero-visual .hero-art-image{width:100%!important;max-width:420px!important;max-height:none!important;animation:none!important}}
 @media(prefers-reduced-motion:reduce){.hero-visual .hero-art-image{animation:none!important}}
+
+/* HARKISH ERA premium polish: subtle motion, crisp focus, and responsive depth */
+:root{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background-image:radial-gradient(ellipse at 82% 8%,rgba(255,25,55,.075),transparent 34%),radial-gradient(ellipse at 8% 42%,rgba(255,25,55,.035),transparent 30%)}
+.navbar nav a,.footer-links a,.text-link{transition:color .22s ease,opacity .22s ease,transform .22s ease}
+.navbar nav a:hover,.footer-links a:hover,.text-link:hover{color:#ff4258;transform:translateY(-2px)}
+.button-primary{position:relative;isolation:isolate;overflow:hidden;box-shadow:0 8px 28px rgba(255,23,48,.13);transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+.button-primary:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(255,23,48,.25)}
+.skill-card,.project-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.skill-card:hover,.project-card:hover{border-color:rgba(255,48,72,.55);box-shadow:0 16px 44px rgba(0,0,0,.24),0 0 24px rgba(255,23,48,.07)}
+input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #ff4258;outline-offset:4px}
+.contact-form input,.contact-form textarea{transition:border-color .2s ease,box-shadow .2s ease}
+.contact-form input:focus,.contact-form textarea:focus{border-color:rgba(255,48,72,.72);box-shadow:0 0 0 3px rgba(255,48,72,.09)}
+.hero-visual .hero-art-image{will-change:filter}
+@keyframes emberPulse{0%,100%{opacity:.55}50%{opacity:1}}
+.section-kicker{animation:emberPulse 4s ease-in-out infinite}
+@media(max-width:650px){body{background-image:radial-gradient(ellipse at 50% 4%,rgba(255,25,55,.065),transparent 38%)}.button-primary:hover,.skill-card:hover,.project-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.section-kicker{animation:none!important}.navbar nav a,.footer-links a,.text-link,.button-primary,.skill-card,.project-card,.contact-form input,.contact-form textarea{transition:none!important}}
