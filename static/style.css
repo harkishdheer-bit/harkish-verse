@@ -207,3 +207,26 @@ input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{
 .profile-link-arrow{margin-left:auto;color:#ff5268}
 @media(max-width:650px){.profile-links{grid-template-columns:1fr;gap:10px}.profile-link{padding:14px}}
 @media(prefers-reduced-motion:reduce){.profile-link{transition:none!important}.profile-link:hover{transform:none}}
+
+/* Animated skills and project showcase polish */
+.skill-card{position:relative;isolation:isolate;overflow:hidden}
+.skill-card::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 0 0,rgba(255,30,55,.12),transparent 52%);opacity:0;transition:opacity .3s ease}
+.skill-card:hover::before{opacity:1}
+.skill-icon{transition:transform .28s ease,color .28s ease,text-shadow .28s ease}
+.skill-card:hover .skill-icon{transform:translateY(-3px) scale(1.06);color:#ff5268;text-shadow:0 0 18px rgba(255,35,60,.38)}
+.learning-strip{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-top:30px;padding:20px 22px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:linear-gradient(110deg,rgba(255,30,55,.065),rgba(255,255,255,.015) 55%,rgba(255,30,55,.025))}
+.learning-strip>div:first-child{display:flex;align-items:center;gap:10px;flex-shrink:0;padding-top:7px}
+.learning-pulse{width:8px;height:8px;border-radius:50%;background:#ff344e;box-shadow:0 0 0 5px rgba(255,52,78,.1);animation:learningPulse 2s ease-in-out infinite}
+.learning-label{font-size:10px;font-weight:800;letter-spacing:.14em;color:#d7cbd0}
+.learning-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
+.learning-tags span{padding:8px 11px;border:1px solid rgba(255,48,72,.19);border-radius:7px;background:rgba(255,30,55,.045);color:#d8cbd0;font-size:11px;transition:border-color .2s ease,background .2s ease}
+.learning-tags span:hover{border-color:rgba(255,48,72,.5);background:rgba(255,30,55,.1)}
+.project-card{position:relative;overflow:hidden}
+.project-card::after{content:"";position:absolute;top:0;bottom:0;left:-120%;width:65%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.035),transparent);transform:skewX(-18deg);transition:left .65s ease}
+.project-card:hover::after{left:140%}
+.project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.project-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid rgba(255,48,72,.25);border-radius:7px;color:#ff6476;text-decoration:none;font-size:11px;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.project-links a:hover{background:rgba(255,30,55,.09);border-color:rgba(255,48,72,.6);transform:translateY(-2px)}
+@keyframes learningPulse{0%,100%{box-shadow:0 0 0 4px rgba(255,52,78,.08)}50%{box-shadow:0 0 0 7px rgba(255,52,78,.02)}}
+@media(max-width:650px){.learning-strip{flex-direction:column;gap:14px;padding:17px}.learning-strip>div:first-child{padding-top:0}.learning-tags{justify-content:flex-start}.project-links a{padding:9px 10px}}
+@media(prefers-reduced-motion:reduce){.learning-pulse{animation:none!important}.skill-card::before,.skill-icon,.project-card::after,.project-links a,.learning-tags span{transition:none!important}.project-card:hover::after{left:-120%}}
