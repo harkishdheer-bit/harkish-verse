@@ -7,6 +7,7 @@
   <meta name="google-site-verification" content="0jG4Ee2Hq_a8l1V4tS1l82V2h9gl5wvU8Fe6CjlplVs">
   <title>HARKISH ERA | Backend Developer</title>
   <meta name="description" content="HARKISH ERA is the portfolio of Harkish, an aspiring backend developer exploring Python, Flask, REST APIs, databases, GitHub and web development.">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='hero-art.svg') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -19,7 +20,7 @@
   </div>
 
   <header class="navbar">
-    <a class="logo" href="#home" aria-label="Harkish Era home">HARKISH<span> ERA.</span></a>
+    <a class="logo" href="#home" aria-label="Harkish Era home"><span class="logo-mark">⚔</span> HARKISH<span> ERA.</span></a>
     <nav aria-label="Main navigation">
       <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
     </nav>
@@ -37,7 +38,7 @@
         <div class="social-links"><a href="https://github.com/harkishdheer-bit" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://discord.gg/Dg9zKAfAr" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="#minecraft-smp">Minecraft SMP ↓</a></div>
         <div class="hero-footnote"><span class="line"></span> BUILDING MY NEXT CHAPTER, ONE COMMIT AT A TIME.</div>
       </div>
-      <div class="hero-visual" aria-label="Decorative code card">
+      <div class="hero-visual" aria-label="HARKISH red flame artwork and code card"><img class="hero-art-image" src="{{ url_for('static', filename='hero-art.svg') }}" alt="HARKISH ERA dark red flaming sword inspired emblem" fetchpriority="high">
         <div class="orb orb-one"></div><div class="orb orb-two"></div>
         <div class="terminal">
           <div class="terminal-top"><div class="window-dots"><i></i><i></i><i></i></div><span>harkish_era.py</span><span class="terminal-status">● ONLINE</span></div>
