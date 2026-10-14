@@ -1,355 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-    <meta name="google-site-verification" content="0jG4Ee2Hq_a8l1V4tS1l82V2h9gl5wvU8Fe6CjlplVs" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>HARKISH VERSE | Backend Developer Portfolio</title>
-    
-<meta name="description" content="HARKISH ERA is the personal portfolio of a backend developer showcasing Python, Flask, REST APIs, SQLite, web development projects, and contact information for hire inquiries.">
-
-
-
-    <meta name="theme-color" content="#09090b">
-    <meta name="google-site-verification" content="0jG4Ee2Hq_a8l1V4tS1l82V2h9gl5wvU8Fe6CjlplVs" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="google-site-verification" content="0jG4Ee2Hq_a8l1V4tS1l82V2h9gl5wvU8Fe6CjlplVs">
+  <title>HARKISH ERA | Backend Developer</title>
+  <meta name="description" content="HARKISH ERA is the portfolio of Harkish, an aspiring backend developer exploring Python, Flask, REST APIs, databases, GitHub and web development.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-<div class="flash-messages">
+  <div class="flash-wrap">
     {% with messages = get_flashed_messages(with_categories=true) %}
-        {% for category, message in messages %}
-            <div class="flash-message {{ category }}">
-                {{ message }}
-            </div>
-        {% endfor %}
+      {% for category, message in messages %}
+        <div class="flash-message {{ category }}">{{ message }}</div>
+      {% endfor %}
     {% endwith %}
-</div>
+  </div>
 
+  <header class="navbar">
+    <a class="logo" href="#home" aria-label="Harkish Era home">HARKISH<span> ERA.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="nav-login" href="/login">Log in</a><a class="nav-cta" href="/signup">Join ↗</a></div>
+  </header>
 
-    <header class="navbar">
-        <a href="#home" class="logo">HARKISH<span>.</span></a>
-
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact" class="nav-button">Contact ↗</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <p class="eyebrow">
-                    <span class="status-dot"></span>
-                    DEVELOPER PORTFOLIO
-                </p>
-
-                <h1>Building the<br>
-                    <span>logic behind</span><br>
-                    the web.
-                </h1>
-
-                <p class="hero-description">
-                    Hi, I'm Harkish. I explore backend development,
-                    build web projects, and work with Python, Java,
-                    APIs and databases.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="button-primary">
-                        Explore my work ↗
-                    </a>
-                    <a href="#about" class="button-secondary">
-                        About me
-                        **HARKISH — Aspiring Backend Developer**
-
-Harkish is an aspiring backend developer who works with Python and Flask to build web applications and explore backend technologies. His interests include REST APIs, databases, Git, GitHub, and web development. Harkish continues to learn programming and develop projects to improve his backend development skills.
-                    </a>
-                </div>
-
-                <div class="tech-line">
-                    <span>PYTHON</span>
-                    <span>JAVA</span>
-                    <span>REST APIs</span>
-                    <span>SQL</span>
-                </div>
-            </div>
-
-            <div class="hero-card">
-                <div class="card-top">
-                    <span>HARKISH / PROFILE</span>
-                    <span class="red-mark">●</span>
-                </div>
-
-                <div class="code-window">
-                    
-<p><span class="code-purple">class</span>
-    <span class="code-green">HarkishEra</span>:</p>
-<p class="indent">
-    <span class="code-purple">def</span>
-    <span class="code-yellow">build</span>(self):
-</p>
-<p class="indent2">
-    return <span class="code-green">"Backend Developer"</span>
-</p>
-```
-                    <p class="indent">
-                        <span class="code-purple">def</span>
-                        <span class="code-yellow">build</span>(self):
-                    </p>
-                    <p class="indent2">
-                        return <span class="code-green">"Ideas into code"</span>
-                    </p>
-                </div>
-
-                <div class="card-bottom">
-                    <div>
-                        <strong>01</strong>
-                        <span>Curiosity</span>
-                    </div>
-                    <div>
-                        <strong>02</strong>
-                        <span>Building</span>
-                    </div>
-                    <div>
-                        <strong>03</strong>
-                        <span>Learning</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="about">
-    <p class="section-label">01 / ABOUT</p>
-
-
-<h2>HARKISH — <span>Backend Developer.</span></h2>
-
-<p class="section-text">
-    HARKISH is an aspiring backend developer focused on
-    building reliable web applications and understanding
-    the systems that power them behind the scenes.
-</p>
-
-<p class="section-text">
-    I work with Python, Flask, REST APIs, databases, Git
-    and GitHub while continuously learning new backend and
-    web development technologies.
-</p>
-
-<div class="tech-line">
-    <span>PYTHON</span>
-    <span>FLASK</span>
-    <span>REST APIs</span>
-    <span>DATABASES</span>
-    <span>GIT & GITHUB</span>
-</div>
-
-</section>
-
-
-        <section class="section" id="skills">
-    <p class="section-label">02 / TECHNOLOGIES</p>
-
-    <h2>Backend <span>toolkit.</span></h2>
-
-    <div class="skill-grid">
-        <article class="skill-card">
-            <span class="skill-number">01</span>
-            <h3>Python</h3>
-            <p>Backend development, automation and application logic</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">02</span>
-            <h3>FastAPI</h3>
-            <p>Modern REST API development and backend services</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">03</span>
-            <h3>Flask</h3>
-            <p>Lightweight Python web applications and APIs</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">04</span>
-            <h3>REST APIs</h3>
-            <p>Building and connecting web application services</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">05</span>
-            <h3>SQL & Databases</h3>
-            <p>Data storage, queries and database management</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">06</span>
-            <h3>Git & GitHub</h3>
-            <p>Version control, collaboration and project management</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">07</span>
-            <h3>Docker</h3>
-            <p>Containerization and development environments</p>
-        </article>
-
-        <article class="skill-card">
-            <span class="skill-number">08</span>
-            <h3>Web Development</h3>
-            <p>HTML, CSS and JavaScript for modern web interfaces</p>
-        </article>
-    </div>
-</section>
-
-        
-<section class="section" id="projects">
-    <p class="section-label">03 / SELECTED WORK</p>
-
-    <h2>Projects & <span>experiments.</span></h2>
-
-    <div class="project-list">
-
-        <article class="project-card">
-            <div>
-                <p class="project-tag">01 / WEB DEVELOPMENT</p>
-                <h3>Harkish-Verse</h3>
-
-                <p>
-                    A personal developer portfolio built with Python and
-                    Flask, designed to showcase backend skills, projects,
-                    technologies and future work.
-                </p>
-
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>Flask</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                </div>
-            </div>
-
-            <span class="project-icon">↗</span>
-        </article>
-
-
-        <article class="project-card">
-            <div>
-                <p class="project-tag">02 / BACKEND</p>
-                <h3>REST API Projects</h3>
-
-                <p>
-                    Backend experiments focused on building APIs,
-                    handling requests, connecting databases and
-                    understanding how modern web services work.
-                </p>
-
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>REST API</span>
-                    <span>FastAPI</span>
-                    <span>SQL</span>
-                </div>
-            </div>
-
-            <span class="project-icon">↗</span>
-        </article>
-
-
-        <article class="project-card">
-            <div>
-                <p class="project-tag">03 / AUTOMATION</p>
-                <h3>Automation & Tools</h3>
-
-                <p>
-                    Small tools and experiments created to automate
-                    repetitive tasks, explore programming concepts
-                    and improve development workflows.
-                </p>
-
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>Automation</span>
-                    <span>Git</span>
-                    <span>Docker</span>
-                </div>
-            </div>
-
-            <span class="project-icon">↗</span>
-        </article>
-
-    </div>
-
-    <p class="section-text small-note">
-        More projects will be added as I continue learning and building.
-    </p>
-</section>
-<section class="contact-section" id="contact">
-    <p class="section-label">04 / HIRE HARKISH</p>
-
-    <h2>Let's build something<br><span>great together.</span></h2>
-
-    <p>
-        Have a project idea, website concept, or backend challenge?
-        Send me a message and I'll get back to you.
-    </p>
-
-    <form class="hire-form" action="/contact" method="POST">
-
-        <div class="form-group">
-            <label for="name">NAME</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-            >
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> ASPIRING BACKEND DEVELOPER</p>
+        <h1>Ideas become<br><span>systems.</span></h1>
+        <p class="hero-lead">I'm Harkish — learning, building and experimenting with the technology behind modern web experiences.</p>
+        <p class="hero-sub">Python · Flask · REST APIs · Databases · GitHub</p>
+        <div class="hero-actions"><a class="button-primary" href="#projects">Explore projects <span>↗</span></a><a class="button-quiet" href="#about">Discover my story ↓</a></div>
+        <div class="hero-footnote"><span class="line"></span> BUILDING MY NEXT CHAPTER, ONE COMMIT AT A TIME.</div>
+      </div>
+      <div class="hero-visual" aria-label="Decorative code card">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="terminal">
+          <div class="terminal-top"><div class="window-dots"><i></i><i></i><i></i></div><span>harkish_era.py</span><span class="terminal-status">● ONLINE</span></div>
+          <div class="terminal-code">
+            <p><span class="code-muted">01</span> <span class="purple">class</span> <span class="green">HarkishEra</span>:</p>
+            <p><span class="code-muted">02</span> &nbsp;&nbsp;<span class="purple">def</span> <span class="yellow">build</span>(self):</p>
+            <p><span class="code-muted">03</span> &nbsp;&nbsp;&nbsp;&nbsp;skills = [</p>
+            <p><span class="code-muted">04</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Python"</span>, <span class="green">"APIs"</span>,</p>
+            <p><span class="code-muted">05</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Databases"</span></p>
+            <p><span class="code-muted">06</span> &nbsp;&nbsp;&nbsp;&nbsp;]</p>
+            <p><span class="code-muted">07</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">return</span> <span class="green">"Always learning"</span><span class="cursor">▌</span></p>
+          </div>
+          <div class="terminal-bottom"><span>MAIN BRANCH</span><span>● READY TO BUILD</span></div>
         </div>
+        <div class="floating-chip chip-top"><span>✳</span> Curiosity first</div>
+        <div class="floating-chip chip-bottom"><span>⌘</span> Learn. Build. Repeat.</div>
+      </div>
+      <div class="hero-index">01 <span>/</span> 05</div>
+    </section>
 
-        <div class="form-group">
-            <label for="email">EMAIL</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-            >
+    <section class="section about-section" id="about">
+      <div class="section-kicker">01 / ABOUT</div>
+      <div class="about-layout">
+        <h2>Curious by nature.<br><span>Builder by practice.</span></h2>
+        <div class="about-copy">
+          <p>Harkish is an aspiring backend developer focused on understanding the systems that power websites and applications.</p>
+          <p>I explore Python, Flask, REST APIs, databases, Git and GitHub while building projects and improving my programming skills step by step.</p>
+          <a class="text-link" href="#contact">Have an idea? Let's talk <span>↗</span></a>
         </div>
+      </div>
+      <div class="stat-strip"><div><strong>01</strong><span>STAY CURIOUS</span></div><div><strong>02</strong><span>BUILD PROJECTS</span></div><div><strong>03</strong><span>KEEP IMPROVING</span></div></div>
+    </section>
 
-        <div class="form-group">
-            <label for="message">MESSAGE</label>
-            <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Tell me about your project..."
-                required
-            ></textarea>
-        </div>
+    <section class="section" id="skills">
+      <div class="section-kicker">02 / TOOLKIT</div>
+      <div class="section-heading"><h2>Tools for the <span>journey.</span></h2><p>Technologies I'm learning and exploring through practical work.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><span class="card-index">01</span><div class="skill-icon">Py</div><h3>Python</h3><p>Programming fundamentals, backend logic and automation.</p><span class="skill-type">LANGUAGE</span></article>
+        <article class="skill-card"><span class="card-index">02</span><div class="skill-icon">Fl</div><h3>Flask</h3><p>Building web apps, routes, forms and server-side features.</p><span class="skill-type">FRAMEWORK</span></article>
+        <article class="skill-card"><span class="card-index">03</span><div class="skill-icon">{ }</div><h3>REST APIs</h3><p>Understanding endpoints, requests and application data.</p><span class="skill-type">BACKEND</span></article>
+        <article class="skill-card"><span class="card-index">04</span><div class="skill-icon">DB</div><h3>Databases</h3><p>SQL, structured data and persistent storage with SQLite.</p><span class="skill-type">DATA</span></article>
+        <article class="skill-card"><span class="card-index">05</span><div class="skill-icon">Git</div><h3>Git & GitHub</h3><p>Version control, commits and keeping projects organized.</p><span class="skill-type">WORKFLOW</span></article>
+        <article class="skill-card"><span class="card-index">06</span><div class="skill-icon">⌘</div><h3>Web foundations</h3><p>HTML, CSS and JavaScript for useful interfaces.</p><span class="skill-type">FRONTEND</span></article>
+      </div>
+    </section>
 
-        <button type="submit" class="button-primary">
-            Send Message ↗
-        </button>
+    <section class="section projects-section" id="projects">
+      <div class="section-kicker">03 / SELECTED WORK</div>
+      <div class="section-heading"><h2>Made while <span>learning.</span></h2><p>Experiments and projects that help turn ideas into working software.</p></div>
+      <div class="project-list">
+        <article class="project-card"><div class="project-number">01</div><div class="project-main"><span class="project-tag">PORTFOLIO · FLASK</span><h3>Harkish Era</h3><p>A personal developer portfolio with a Flask backend, account features, database-backed forms and a place to share my progress.</p><div class="tag-list"><span>Python</span><span>Flask</span><span>HTML/CSS</span></div></div><span class="project-arrow">↗</span></article>
+        <article class="project-card"><div class="project-number">02</div><div class="project-main"><span class="project-tag">BACKEND · LEARNING</span><h3>API experiments</h3><p>Small backend exercises exploring request handling, API structure and the connection between applications and data.</p><div class="tag-list"><span>REST APIs</span><span>Python</span><span>SQL</span></div></div><span class="project-arrow">↗</span></article>
+        <article class="project-card"><div class="project-number">03</div><div class="project-main"><span class="project-tag">TOOLS · AUTOMATION</span><h3>Small useful tools</h3><p>Programming experiments designed to practice problem-solving and simplify repetitive tasks.</p><div class="tag-list"><span>Python</span><span>Automation</span><span>Git</span></div></div><span class="project-arrow">↗</span></article>
+      </div>
+      <p class="small-note">This portfolio will grow as I learn and ship more projects.</p>
+    </section>
 
-    </form>
-</section>
-
-    </main>
-
-    <footer>
-        <a href="#home" class="logo">HARKISH<span>.</span></a>
-        <p>Learning, building, improving.</p>
-        <p>© 2026 Harkish</p>
-    </footer>
-
+    <section class="contact-section" id="contact">
+      <div class="section-kicker">04 / GET IN TOUCH</div>
+      <div class="contact-layout"><div><h2>Have something<br><span>in mind?</span></h2><p>Send a message about a project, collaboration idea or question. Your message will be saved so I can follow up.</p><div class="contact-note"><span class="contact-symbol">↳</span> GOOD IDEAS START WITH A CONVERSATION.</div></div>
+      <form class="contact-form" action="/contact" method="POST">
+        <label for="name">YOUR NAME</label><input type="text" id="name" name="name" placeholder="How should I call you?" required>
+        <label for="email">EMAIL ADDRESS</label><input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <label for="message">YOUR MESSAGE</label><textarea id="message" name="message" rows="5" placeholder="Tell me a little about it..." required></textarea>
+        <button class="button-primary" type="submit">Send message <span>↗</span></button>
+      </form></div>
+    </section>
+  </main>
+  <footer><a class="logo" href="#home">HARKISH<span> ERA.</span></a><p>Learning, building, improving.</p><div class="footer-links"><a href="/login">Log in</a><a href="/signup">Sign up</a><a href="#home">Back to top ↑</a></div><p class="copyright">© 2026 Harkish</p></footer>
 </body>
 </html>
