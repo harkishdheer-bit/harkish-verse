@@ -127,3 +127,14 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 .hero-visual .terminal{z-index:2}
 @media(max-width:650px){.hero-art-image{opacity:.76;animation:none}}
 @media(prefers-reduced-motion:reduce){.hero-art-image{animation:none}}
+
+
+/* HARKISH ERA artwork visibility fix v2 */
+.hero-visual{position:relative;min-height:520px;isolation:isolate;overflow:visible}
+.hero-visual::before{display:none!important}
+.hero-visual .hero-art-image{display:block!important;position:absolute!important;inset:-8% -12% auto!important;width:124%!important;height:88%!important;object-fit:contain!important;opacity:1!important;z-index:1!important;visibility:visible!important}
+.hero-visual .terminal{position:relative;z-index:3;width:88%;margin-top:170px;background:rgba(9,9,11,.88);backdrop-filter:blur(7px);box-shadow:0 20px 65px #000b}
+.hero-visual .orb{z-index:2}
+.hero-visual .floating-chip{z-index:4}
+@media(max-width:850px){.hero-visual{min-height:430px}.hero-visual .hero-art-image{inset:-3% -7% auto!important;width:114%!important;height:78%!important}.hero-visual .terminal{width:92%;margin-top:135px}}
+@media(max-width:650px){.hero-visual{min-height:390px}.hero-visual .hero-art-image{inset:0 -4% auto!important;width:108%!important;height:72%!important}.hero-visual .terminal{margin-top:125px;width:96%}}
