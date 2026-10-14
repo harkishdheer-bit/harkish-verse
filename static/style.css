@@ -167,3 +167,13 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 .server-ip{padding:2px 7px;border:1px solid #ff344433;border-radius:4px;background:#ff34440a}
 ::selection{background:#ff3444;color:#fff}
 @media(prefers-reduced-motion:reduce){.button-primary,.button-primary::before,.skill-card,.project-card,.text-link,.footer-links a,.navbar nav a{transition:none!important}.button-primary:hover,.skill-card:hover,.project-card:hover{transform:none!important}}
+
+
+/* Hero image visibility fix: render the sword artwork in normal layout flow */
+.hero-visual{display:flex!important;align-items:center!important;justify-content:center!important;min-height:0!important;height:auto!important;overflow:visible!important}
+.hero-visual .hero-art-image{display:block!important;position:relative!important;inset:auto!important;width:100%!important;height:auto!important;max-height:620px!important;max-width:620px!important;object-fit:contain!important;opacity:1!important;visibility:visible!important;z-index:3!important;margin:0 auto!important;flex:0 1 auto!important;filter:drop-shadow(0 0 32px #ff172b38)!important;animation:artGlow 6s ease-in-out infinite!important}
+.hero-visual::before{display:none!important}
+.hero-visual .terminal,.hero-visual .floating-chip,.hero-visual .orb{display:none!important}
+@media(max-width:850px){.hero-visual .hero-art-image{max-height:520px!important;max-width:520px!important}}
+@media(max-width:650px){.hero-visual{min-height:0!important;margin-top:18px!important}.hero-visual .hero-art-image{width:100%!important;max-width:420px!important;max-height:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-visual .hero-art-image{animation:none!important}}
