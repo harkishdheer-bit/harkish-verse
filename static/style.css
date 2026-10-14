@@ -147,3 +147,23 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 @keyframes swordPulse{0%,100%{text-shadow:0 0 3px #ff344455;box-shadow:0 0 0 #ff344400}50%{text-shadow:0 0 10px #ff3444;box-shadow:0 0 14px #ff344422}}
 @keyframes swordRing{0%{transform:scale(.86);opacity:.55}100%{transform:scale(1.45);opacity:0}}
 @media(prefers-reduced-motion:reduce){.logo-mark,.logo-mark::after{animation:none!important}}
+
+
+/* Premium interaction pass: cards, buttons, links and keyboard accessibility */
+:root{--red-hot:#ff263f;--red-soft:#ff6a78}
+:focus-visible{outline:2px solid var(--red-soft);outline-offset:4px;border-radius:4px}
+.button-primary{position:relative;isolation:isolate;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.button-primary::before{content:"";position:absolute;z-index:-1;top:-80%;left:-35%;width:28%;height:260%;background:linear-gradient(90deg,transparent,#ffffff35,transparent);transform:rotate(22deg);transition:left .55s ease}
+.button-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px #ff263f30}
+.button-primary:hover::before{left:125%}
+.skill-card,.project-card{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,background .28s ease}
+.skill-card:hover{transform:translateY(-6px);border-color:#ff344477;box-shadow:0 16px 38px #0005,0 0 25px #ff263f0c;background:linear-gradient(145deg,#151115,#101014)}
+.skill-card:hover .skill-icon{color:#fff;border-color:#ff3444;background:#ff263f18;box-shadow:0 0 22px #ff263f22}
+.project-card:hover{border-color:#ff344477;box-shadow:0 15px 38px #0004}
+.project-card:hover .project-number{color:var(--red-soft)}
+.text-link,.footer-links a,.navbar nav a{transition:color .2s ease}
+.text-link:hover,.footer-links a:hover,.navbar nav a:hover{color:var(--red-soft)}
+.social-links a:focus-visible,.project-links a:focus-visible{outline-offset:3px}
+.server-ip{padding:2px 7px;border:1px solid #ff344433;border-radius:4px;background:#ff34440a}
+::selection{background:#ff3444;color:#fff}
+@media(prefers-reduced-motion:reduce){.button-primary,.button-primary::before,.skill-card,.project-card,.text-link,.footer-links a,.navbar nav a{transition:none!important}.button-primary:hover,.skill-card:hover,.project-card:hover{transform:none!important}}
