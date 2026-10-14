@@ -118,5 +118,38 @@
     </section>
   </main>
   <footer><a class="logo" href="#home">HARKISH<span> ERA.</span></a><p>Learning, building, improving.</p><div class="footer-links"><a href="https://github.com/harkishdheer-bit" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://discord.gg/Dg9zKAfAr" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="/login">Log in</a><a href="/signup">Sign up</a><a href="#home">Back to top ↑</a></div><p class="copyright">© 2026 Harkish</p></footer>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const progress = document.getElementById('reading-progress-bar');
+      let ticking = false;
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        if (progress) progress.style.width = Math.min(100, Math.max(0, percent)) + '%';
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
+      }, { passive: true });
+      updateProgress();
+
+      const revealItems = document.querySelectorAll('.section, .skill-card, .project-card, .profile-link, .learning-strip, .contact-form');
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        revealItems.forEach((item) => item.classList.add('scroll-reveal'));
+        document.body.classList.add('reveal-ready');
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+        revealItems.forEach((item) => observer.observe(item));
+      }
+    })();
+  </script>
 </body>
 </html>
