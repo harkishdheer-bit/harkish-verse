@@ -1,43 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" fill="none">
 <defs>
- <radialGradient id="aura"><stop stop-color="#ff102c" stop-opacity=".48"/><stop offset="1" stop-color="#ff102c" stop-opacity="0"/></radialGradient>
- <linearGradient id="steel" x1="380" y1="160" x2="525" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1f2"/><stop offset=".18" stop-color="#ff3047"/><stop offset=".48" stop-color="#7b0a1b"/><stop offset=".72" stop-color="#171217"/><stop offset="1" stop-color="#ff2039"/></linearGradient>
- <linearGradient id="hilt" x1="390" y1="200" x2="510" y2="330" gradientUnits="userSpaceOnUse"><stop stop-color="#ff4a5a"/><stop offset=".5" stop-color="#161116"/><stop offset="1" stop-color="#b20d27"/></linearGradient>
- <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
- <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+ <radialGradient id="glow"><stop stop-color="#ff1238" stop-opacity=".42"/><stop offset="1" stop-color="#ff1238" stop-opacity="0"/></radialGradient>
+ <linearGradient id="hood" x1="310" y1="180" x2="610" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#343039"/><stop offset=".45" stop-color="#141217"/><stop offset="1" stop-color="#050507"/></linearGradient>
+ <linearGradient id="blade" x1="390" y1="160" x2="560" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".22" stop-color="#ffccd3"/><stop offset=".5" stop-color="#ff173d"/><stop offset="1" stop-color="#5e0619"/></linearGradient>
+ <linearGradient id="coat" x1="350" y1="400" x2="590" y2="710" gradientUnits="userSpaceOnUse"><stop stop-color="#26232a"/><stop offset="1" stop-color="#08080b"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
 </defs>
-<rect width="900" height="760" fill="#080709"/>
-<ellipse cx="450" cy="380" rx="355" ry="350" fill="url(#aura)"/>
-<g stroke="#ff1c36" stroke-opacity=".35"><circle cx="450" cy="365" r="300"/><circle cx="450" cy="365" r="270"/><path d="M120 400 230 330 200 280 300 220M780 400 670 330 700 280 600 220"/></g>
-<g fill="#ff243e" opacity=".9" filter="url(#glow)">
- <path d="M280 580C205 510 255 460 306 425c-15 65 29 68 41 99-6-69 33-105 64-152-4 82 47 102 12 175-25 52-83 77-143 33Z"/>
- <path d="M620 580c75-70 25-120-26-155 15 65-29 68-41 99 6-69-33-105-64-152 4 82-47 102-12 175 25 52 83 77 143 33Z"/>
- <path d="M345 280c-60-75 3-104 16-150 26 40 10 65 31 84 5-56 43-76 44-127 47 68 31 119 9 155Z" opacity=".65"/>
- <path d="M555 280c60-75-3-104-16-150-26 40-10 65-31 84-5-56-43-76-44-127-47 68-31 119-9 155Z" opacity=".65"/>
+<ellipse cx="470" cy="390" rx="310" ry="300" fill="url(#glow)"/>
+<g stroke="#ff183d" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M286 390C238 327 270 283 302 248C289 301 330 306 326 347C357 307 361 274 353 240C407 294 398 337 374 376" stroke-width="7" opacity=".78"/>
+ <path d="M594 375C644 318 621 277 600 243C609 290 570 302 577 337C543 302 541 270 552 238C495 294 510 338 530 379" stroke-width="7" opacity=".75"/>
+ <path d="M315 520C275 478 290 446 310 425M620 516C655 478 645 448 626 426" stroke-width="5" opacity=".55"/>
 </g>
-<g filter="url(#glow)" stroke-linejoin="round">
- <!-- blade -->
- <path d="M432 300 450 74 468 300 450 548Z" fill="url(#steel)" stroke="#ff4053" stroke-width="3"/>
- <path d="M450 105 450 515" stroke="#fff0f1" stroke-opacity=".75" stroke-width="2"/>
- <path d="M437 300 450 185 463 300 450 485Z" fill="#100b10" opacity=".7"/>
- <!-- crossguard -->
- <path d="M365 294 406 270 432 292 450 312 468 292 494 270 535 294 500 310 472 326 450 339 428 326 400 310Z" fill="url(#hilt)" stroke="#ff344b" stroke-width="4"/>
- <path d="M405 278 450 314 495 278M450 314V350" stroke="#ffd6da" stroke-opacity=".65" stroke-width="2"/>
- <!-- grip -->
- <path d="M431 337 469 337 466 415 450 438 434 415Z" fill="#130e13" stroke="#a80e27" stroke-width="3"/>
- <path d="m434 351 32 14m-32 2 32 14m-32 2 32 14m-32 2 25 11" stroke="#ff3b50" stroke-width="4"/>
- <!-- pommel -->
- <path d="m450 425 24 25-24 32-24-32Z" fill="#170c12" stroke="#ff344b" stroke-width="3"/>
- <path d="m450 438 11 12-11 15-11-15Z" fill="#ff334b"/>
-</g>
-<g stroke="#ff253d" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
- <path d="M365 355c-62 34-58 83-18 105M535 355c62 34 58 83 18 105"/>
- <path d="M350 470c-38 25-32 55-4 72M550 470c38 25 32 55 4 72"/>
- <path d="M390 225c-42-36-24-69-4-89M510 225c42-36 24-69 4-89"/>
-</g>
-<text x="450" y="590" fill="#ff293f" stroke="#ff7b88" stroke-width=".7" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="69" font-weight="900" letter-spacing="3">HARKISH</text>
-<path d="M275 612H380M520 612H625" stroke="#ff2d43" stroke-width="3"/>
-<text x="450" y="626" fill="#fff0f2" text-anchor="middle" font-family="monospace" font-size="23" letter-spacing="12">ERA</text>
-<text x="450" y="687" fill="#8d858c" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="5">BUILD • LEARN • REPEAT</text>
-<g fill="#ff3047"><circle cx="234" cy="244" r="3"/><circle cx="663" cy="290" r="2"/><circle cx="300" cy="520" r="2"/><circle cx="610" cy="505" r="3"/><circle cx="568" cy="170" r="2"/><circle cx="330" cy="178" r="2"/></g>
+<g opacity=".45" fill="#ff173d" filter="url(#blur)"><ellipse cx="470" cy="395" rx="130" ry="205"/></g>
+<!-- hooded young warrior -->
+<path d="M302 690L324 530Q335 472 380 446L405 420H510L543 447Q596 474 610 534L640 690Z" fill="url(#coat)" stroke="#3a3038" stroke-width="3"/>
+<path d="M325 543Q298 479 329 402Q345 344 390 318L411 289Q451 262 495 291L529 319Q579 351 594 415Q604 474 570 536L527 493L488 456H412L370 493Z" fill="url(#hood)" stroke="#5a2532" stroke-width="4"/>
+<!-- inner shadow face -->
+<path d="M382 354Q450 306 522 354L510 423Q486 462 450 466Q414 459 392 423Z" fill="#050507" stroke="#772033" stroke-width="3"/>
+<path d="M402 399L435 390M466 390L500 399" stroke="#ff2848" stroke-width="5" stroke-linecap="round" opacity=".95"/>
+<path d="M418 418Q450 430 482 418" stroke="#54101e" stroke-width="3" stroke-linecap="round"/>
+<path d="M342 393Q357 328 408 300M554 395Q541 329 494 301" stroke="#ff304d" stroke-width="5" opacity=".72"/>
+<!-- hoodie details -->
+<path d="M380 470L420 517L450 485L480 517L526 469" stroke="#8a1c31" stroke-width="4"/>
+<path d="M450 486V636" stroke="#31262d" stroke-width="3"/>
+<path d="M370 536L402 561M530 536L498 561" stroke="#ff173d" stroke-width="3" opacity=".7"/>
+<!-- flaming sword, diagonal across the right side -->
+<path d="M540 174Q558 224 548 267L520 349L494 424L470 481L450 466L480 405L502 331L525 255Q535 212 540 174Z" fill="url(#blade)" stroke="#ff6b7e" stroke-width="3"/>
+<path d="M540 185L530 270L497 371L477 424" stroke="#fff0f2" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+<path d="M460 461L500 482L481 501L444 482Z" fill="#8d0a23" stroke="#ff2948" stroke-width="3"/>
+<path d="M432 477L488 508M440 466L496 497" stroke="#d9d3d6" stroke-width="7" stroke-linecap="round"/>
+<path d="M460 490L420 555L435 564L478 501Z" fill="#171217" stroke="#6f1b2b" stroke-width="3"/>
+<path d="M423 553L443 566L434 583L411 567Z" fill="#ff173d"/>
+<g fill="#ff2a48" opacity=".85"><path d="M574 260l18 -27 -5 35 22 10 -29 5z"/><path d="M520 143l10 -24 5 27 17 7 -22 4z"/><path d="M355 280l-15 -28 4 34 -20 12 27 0z"/></g>
+<path d="M235 700H666" stroke="#ff173d" stroke-width="2" opacity=".65"/>
+<text x="450" y="728" fill="#f7f2f4" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="900" letter-spacing="9" text-anchor="middle">HARKISH ERA</text>
+<text x="450" y="750" fill="#ff304d" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" letter-spacing="5" text-anchor="middle">BUILD • CREATE • DOMINATE</text>
 </svg>
