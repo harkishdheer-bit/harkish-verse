@@ -22,7 +22,8 @@
 
   <header class="navbar">
     <a class="logo" href="#home" aria-label="Harkish Era home"><span class="logo-mark">⚔</span> HARKISH<span> ERA.</span></a>
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Main navigation">
       <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions"><a class="nav-login" href="/login">Log in</a><a class="nav-cta" href="/signup">Join ↗</a></div>
@@ -134,6 +135,31 @@
         if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
       }, { passive: true });
       updateProgress();
+
+      // Accessible compact navigation for small screens.
+      const navbar = document.querySelector('.navbar');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.getElementById('main-nav');
+      const closeMenu = () => {
+        if (!navbar || !menuToggle) return;
+        navbar.classList.remove('nav-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      };
+      if (navbar && menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navbar.classList.toggle('nav-open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+        mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeMenu();
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 650) closeMenu();
+        }, { passive: true });
+      }
 
       const revealItems = document.querySelectorAll('.section, .skill-card, .project-card, .profile-link, .learning-strip, .contact-form');
       if (!reduceMotion && 'IntersectionObserver' in window) {
