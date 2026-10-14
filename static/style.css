@@ -230,3 +230,16 @@ input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{
 @keyframes learningPulse{0%,100%{box-shadow:0 0 0 4px rgba(255,52,78,.08)}50%{box-shadow:0 0 0 7px rgba(255,52,78,.02)}}
 @media(max-width:650px){.learning-strip{flex-direction:column;gap:14px;padding:17px}.learning-strip>div:first-child{padding-top:0}.learning-tags{justify-content:flex-start}.project-links a{padding:9px 10px}}
 @media(prefers-reduced-motion:reduce){.learning-pulse{animation:none!important}.skill-card::before,.skill-icon,.project-card::after,.project-links a,.learning-tags span{transition:none!important}.project-card:hover::after{left:-120%}}
+
+/* Scroll reveal and reading progress */
+.reading-progress{position:fixed;z-index:9999;top:0;left:0;width:100%;height:3px;pointer-events:none;background:rgba(255,255,255,.035)}
+#reading-progress-bar{display:block;width:0;height:100%;background:linear-gradient(90deg,#8e071e,#ff173d,#ff7585);box-shadow:0 0 12px rgba(255,23,61,.55);transition:width .08s linear}
+.scroll-reveal{opacity:1;transform:none}
+body.reveal-ready .scroll-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+body.reveal-ready .scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
+body.reveal-ready .skill-card.scroll-reveal:nth-child(2),body.reveal-ready .project-card.scroll-reveal:nth-child(2){transition-delay:.06s}
+body.reveal-ready .skill-card.scroll-reveal:nth-child(3),body.reveal-ready .project-card.scroll-reveal:nth-child(3){transition-delay:.12s}
+body.reveal-ready .skill-card.scroll-reveal:nth-child(4){transition-delay:.18s}
+body.reveal-ready .skill-card.scroll-reveal:nth-child(5){transition-delay:.24s}
+body.reveal-ready .skill-card.scroll-reveal:nth-child(6){transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){#reading-progress-bar{transition:none!important}body.reveal-ready .scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}}
