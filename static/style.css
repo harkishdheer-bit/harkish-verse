@@ -102,3 +102,11 @@ footer .logo:hover{filter:drop-shadow(0 0 10px #ff344455)}
 @keyframes artGlow{0%,100%{opacity:.72;filter:saturate(1)}50%{opacity:.98;filter:saturate(1.3)}}
 @media(max-width:650px){.hero-visual::before{inset:-3% -8%;opacity:.6;animation:none}}
 @media(prefers-reduced-motion:reduce){.hero-visual::before{animation:none}}
+
+/* Social profiles and JACK SMP project links */
+.social-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.social-links a,.project-links a{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #34343d;border-radius:5px;color:#c9c9d1;font:10px var(--mono);transition:border-color .2s,color .2s,background .2s,transform .2s}
+.social-links a:hover,.project-links a:hover{border-color:var(--red);color:#fff;background:#ff34440d;transform:translateY(-2px)}
+.server-ip{display:inline-block;margin-top:5px;color:#ff6672;font-family:var(--mono);font-weight:500;overflow-wrap:anywhere}
+.project-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+@media(max-width:650px){.social-links{gap:7px}.social-links a{font-size:9px;padding:7px 9px}}
