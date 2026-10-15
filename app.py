@@ -420,7 +420,7 @@ def robots_txt():
     response = make_response(
         "User-agent: *\n"
         "Allow: /\n\n"
-        "Sitemap: https://harkish-verse-6x1q.onrender.com/sitemap.xml\n"
+        "Sitemap: https://harkish.devs.surf/sitemap.xml\n"
     )
     response.headers["Content-Type"] = "text/plain"
     return response
@@ -431,7 +431,7 @@ def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://harkish-verse-6x1q.onrender.com/</loc>
+        <loc>https://harkish.devs.surf/</loc>
     </url>
 </urlset>"""
     response = make_response(xml)
