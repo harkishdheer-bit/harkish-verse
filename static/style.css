@@ -261,3 +261,11 @@ body.reveal-ready .skill-card.scroll-reveal:nth-child(6){transition-delay:.3s}
   .navbar.nav-open .menu-toggle span:last-child{transform:translateY(-7px) rotate(-45deg)}
 }
 @media(prefers-reduced-motion:reduce){.menu-toggle,.menu-toggle span{transition:none!important}}
+
+/* Hire request form */
+.contact-form select{width:100%;padding:14px 15px;border:1px solid #303038;border-radius:5px;background:#111115;color:var(--text);font:12px var(--font);outline:none}
+.contact-form select:focus{border-color:var(--red);background:#141418;box-shadow:0 0 0 3px #ff344415}
+.contact-form select:invalid{color:#696973}
+.contact-form select option{background:#111115;color:var(--text)}
+.hire-section{background:linear-gradient(180deg,#09090b,#0d0b0e)}
+@media(max-width:650px){.hire-section .contact-layout{gap:30px}}
