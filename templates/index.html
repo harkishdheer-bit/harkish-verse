@@ -24,7 +24,7 @@
     <a class="logo" href="#home" aria-label="Harkish Era home"><span class="logo-mark">⚔</span> HARKISH<span> ERA.</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#hire">Hire</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions"><a class="nav-login" href="/login">Log in</a><a class="nav-cta" href="/signup">Join ↗</a></div>
   </header>
@@ -105,6 +105,32 @@
         <article class="project-card"><div class="project-number">03</div><div class="project-main"><span class="project-tag">GAMING · MINECRAFT</span><h3 id="minecraft-smp">JACK SMP</h3><p>Join my Minecraft SMP community and play together. Server address: <strong class="server-ip">jacksmpzzz.aternos.me</strong></p><div class="tag-list"><span>Minecraft</span><span>Community</span></div><div class="project-links"><a href="https://discord.gg/Dg9zKAfAr" target="_blank" rel="noopener noreferrer">Join Discord ↗</a><a href="https://jacksmpzzz.aternos.me" target="_blank" rel="noopener noreferrer">Server page ↗</a></div></div><span class="project-arrow">↗</span></article>
       </div>
       <p class="small-note">This portfolio will grow as I learn and ship more projects.</p>
+    </section>
+
+    <section class="section hire-section" id="hire">
+      <div class="section-kicker">04 / WORK WITH ME</div>
+      <div class="contact-layout">
+        <div>
+          <h2>Got a project?<br><span>Let's plan it.</span></h2>
+          <p>Share what you're building and what kind of help you need. Your request will be saved so I can review the details.</p>
+          <div class="contact-note"><span class="contact-symbol">↳</span> CLEAR DETAILS. BETTER BUILDS.</div>
+        </div>
+        <form class="contact-form" action="/hire" method="POST">
+          <label for="hire-name">YOUR NAME</label><input type="text" id="hire-name" name="name" placeholder="Your name" autocomplete="name" maxlength="80" required>
+          <label for="hire-email">EMAIL ADDRESS</label><input type="email" id="hire-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required>
+          <label for="hire-service">WHAT DO YOU NEED?</label>
+          <select id="hire-service" name="service" required>
+            <option value="" disabled selected>Choose a project type</option>
+            <option value="Website or portfolio">Website or portfolio</option>
+            <option value="Python or Flask backend">Python or Flask backend</option>
+            <option value="API or database">API or database</option>
+            <option value="Automation or bot">Automation or bot</option>
+            <option value="Other project idea">Other project idea</option>
+          </select>
+          <label for="hire-message">PROJECT DETAILS</label><textarea id="hire-message" name="message" rows="5" maxlength="3000" placeholder="What would you like to build?" required></textarea>
+          <button class="button-primary" type="submit">Send hire request <span>↗</span></button>
+        </form>
+      </div>
     </section>
 
     <section class="contact-section" id="contact">
