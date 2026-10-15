@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — Harkish-Verse</title>
+    <title>Login — HARKISH ERA</title>
 
     <style>
         * {
@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-            background: #0b0b12;
+            background: radial-gradient(ellipse at top, #250808 0%, #09090b 58%);
             color: white;
         }
 
@@ -26,8 +26,9 @@
             max-width: 420px;
             padding: 35px;
             border-radius: 20px;
-            background: #151522;
-            box-shadow: 0 0 35px rgba(100, 80, 255, 0.25);
+            background: rgba(18, 18, 22, 0.96);
+            border: 1px solid rgba(255, 55, 55, 0.3);
+            box-shadow: 0 0 38px rgba(255, 35, 35, 0.13);
         }
 
         h1 {
@@ -57,7 +58,7 @@
             margin-top: 20px;
             border: none;
             border-radius: 10px;
-            background: #6c5ce7;
+            background: linear-gradient(135deg, #ff3030, #a90000);
             color: white;
             font-size: 16px;
             font-weight: bold;
@@ -70,7 +71,7 @@
         }
 
         a {
-            color: #8c7cff;
+            color: #ff5b5b;
             text-decoration: none;
         }
 
@@ -86,8 +87,8 @@
 
 <div class="box">
 
-    <h1>Harkish-Verse</h1>
-    <p>Login to your account</p>
+    <h1>HARKISH <span style="color:#ff3b3b">ERA</span></h1>
+    <p>Enter the ERA</p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% for category, message in messages %}
